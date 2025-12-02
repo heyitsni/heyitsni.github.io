@@ -1,14 +1,15 @@
-.profile-photo {
-    position: absolute;
-    top: 40px;      
-    left: 40px;
-    width: 180px;
-    height: 180px;
+.profile-circle {
+    width: 200px;        /* match your circle size */
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;    /* makes the image clip to the circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.profile-photo img {
+.profile-circle img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* keep your built-in circle effect */
-    display: block;
+    object-fit: cover;   /* zoom + crop to fill circle */
 }
