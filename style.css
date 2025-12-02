@@ -1,6 +1,6 @@
-.profile-circle {
-    width: 200px;        /* match your circle size */
-    height: 200px;
+ .profile-circle {
+    width: 50px;        /* match your circle size */
+    height: 50px;
     border-radius: 50%;
     overflow: hidden;    /* makes the image clip to the circle */
     display: flex;
@@ -13,4 +13,5 @@
     height: 100%;
     object-fit: cover;   /* zoom + crop to fill circle */
 }
+
 
