@@ -1,17 +1,22 @@
- .profile-circle {
-    width: 50px;        /* match your circle size */
-    height: 50px;
+.profile-circle {
+    width: 250px;      /* adjust to match your blue circle */
+    height: 250px;
     border-radius: 50%;
-    overflow: hidden;    /* makes the image clip to the circle */
+    overflow: hidden;  /* IMPORTANT: clips the image */
+    position: relative;
+
+    /* Center it */
     display: flex;
     justify-content: center;
     align-items: center;
+
+    /* If your blue border is part of CSS, add: */
+    border: 10px solid #0fa0ff; /* optional */
 }
 
 .profile-circle img {
     width: 100%;
     height: 100%;
-    object-fit: cover;   /* zoom + crop to fill circle */
+    object-fit: cover; /* zoom + crop perfectly */
+    object-position: center;
 }
-
-
