@@ -10,9 +10,7 @@
     justify-content: center;
     align-items: center;
 
-    /* If your blue border is part of CSS, add: */
-    border: 10px solid #0fa0ff; /* optional */
-}
+   
 
 .profile-circle img {
     width: 100%;
@@ -20,6 +18,7 @@
     object-fit: cover; /* zoom + crop perfectly */
     object-position: center;
 }
+
 
 
 
