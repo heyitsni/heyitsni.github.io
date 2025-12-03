@@ -1,6 +1,6 @@
 .profile-circle {
-    width: 500px;      /* adjust to match your blue circle */
-    height:  500px;
+    width: 350px;      /* adjust to match your blue circle */
+    height:  350px;
     border-radius: 50%;
     overflow: hidden;  /* IMPORTANT: clips the image */
     position: relative;
@@ -20,6 +20,7 @@
     object-fit: cover; /* zoom + crop perfectly */
     object-position: center;
 }
+
 
 
 
