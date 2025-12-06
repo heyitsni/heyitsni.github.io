@@ -13,10 +13,19 @@ body {
 
 /* SQUARE GRID */
 body.grid-square {
+    /* light grid lines */
     background-image:
-        linear-gradient(#d0e4ff 1px, transparent 1px),
-        linear-gradient(90deg, #d0e4ff 1px, transparent 1px);
-    background-size: 40px 40px;
+        linear-gradient(to right, rgba(0, 120, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 120, 255, 0.15) 1px, transparent 1px),
+
+        /* bold grid every 5 cells */
+        linear-gradient(to right, rgba(0, 120, 255, 0.3) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 120, 255, 0.3) 1px, transparent 1px);
+
+    /* spacing */
+    background-size:
+        20px 20px, 20px 20px,   /* light grid */
+        100px 100px, 100px 100px; /* every 5 squares = bolder line */
 }
 
 /* DOTTED GRID */
@@ -69,3 +78,4 @@ body.grid-dotted {
     transition: transform 0.1s ease-out;
     will-change: transform;
 }
+
