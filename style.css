@@ -18,6 +18,19 @@ body.grid-dotted {
         radial-gradient(#8cbcff 1px, transparent 1px);
     background-size: 20px 20px;
 }
+.grid-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 16px;
+    background: #2b6cd4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    z-index: 9999;
+}
 
 
 .profile-circle {
@@ -48,6 +61,7 @@ body.grid-dotted {
      transition: transform 0.1s ease-out; /* smooth tilt */
     will-change: transform; /* smoother animation */
 }
+
 
 
 
