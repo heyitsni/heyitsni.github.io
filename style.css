@@ -5,13 +5,8 @@ html, body {
     padding: 0;
 }
 
-/* DEFAULT — no grid */
-body {
-    background: white;
-    transition: background 0.3s ease;
-}
 
-/* SQUARE GRID */
+/*DEFAULT — SQUARE GRID */
 body.grid-square {
     /* light grid lines */
     background-image:
@@ -33,6 +28,12 @@ body.grid-dotted {
     background-image:
         radial-gradient(#8cbcff 1px, transparent 1px);
     background-size: 20px 20px;
+}
+
+/* no grid */
+body {
+    background: white;
+    transition: background 0.3s ease;
 }
 
 /* GRID TOGGLE BUTTON */
@@ -78,5 +79,6 @@ body.grid-dotted {
     transition: transform 0.1s ease-out;
     will-change: transform;
 }
+
 
 
