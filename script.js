@@ -8,18 +8,20 @@ btn.addEventListener("click", () => {
     mode++;
 
     if (mode === 1) {
-        document.body.classList.remove("grid-dotted");
-        document.body.classList.add("grid-square");
-        btn.textContent = "Grid: Square";
-    }
-    else if (mode === 2) {
+        // Dotted grid
         document.body.classList.remove("grid-square");
         document.body.classList.add("grid-dotted");
         btn.textContent = "Grid: Dotted";
     }
-    else {
-        document.body.classList.remove("grid-square", "grid-dotted");
+    else if (mode === 2) {
+        // No grid
+        document.body.classList.remove("grid-dotted");
         btn.textContent = "Grid: Off";
+    }
+    else {
+        // Back to square grid
+        document.body.classList.add("grid-square");
+        btn.textContent = "Grid: Square";
         mode = 0;
     }
 });
@@ -57,3 +59,4 @@ circle.addEventListener('mouseleave', () => {
         scale(1)
     `;
 });
+
