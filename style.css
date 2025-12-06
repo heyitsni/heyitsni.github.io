@@ -3,12 +3,14 @@
     height:  200px;
     border-radius: 50%;
     overflow: hidden;  /* IMPORTANT: clips the image */
-    position: relative;
 
     /* Center it */
     display: flex;
     justify-content: center;
     align-items: center;
+
+    margin-left: 50px;  /* move right */
+    margin-top: 20px;   /* move down */
 }
    
 
@@ -18,6 +20,7 @@
     object-fit: cover; /* zoom + crop perfectly */
     object-position: center;
 }
+
 
 
 
