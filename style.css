@@ -12,8 +12,8 @@
     margin-left: 50px;  /* move right */
     margin-top: 50px;   /* move down */
 
-    transition: transform 0.2s ease-out;  /* smooth reset */
-    perspective: 800px; /* important for 3D effect */
+    perspective: 800px; /* critical for parallax depth */
+    transition: transform 0.2s ease-out;
 }
    
 
@@ -24,7 +24,9 @@
     object-position: center;
 
      transition: transform 0.1s ease-out; /* smooth tilt */
+    will-change: transform; /* smoother animation */
 }
+
 
 
 
