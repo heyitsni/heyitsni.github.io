@@ -10,7 +10,7 @@
     align-items: center;
 
     margin-left: 50px;  /* move right */
-    margin-top: 20px;   /* move down */
+    margin-top: 50px;   /* move down */
 }
    
 
@@ -20,6 +20,7 @@
     object-fit: cover; /* zoom + crop perfectly */
     object-position: center;
 }
+
 
 
 
