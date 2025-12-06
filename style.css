@@ -21,6 +21,7 @@ body.grid-square {
     background-size:
         20px 20px, 20px 20px,   /* light grid */
         100px 100px, 100px 100px; /* every 5 squares = bolder line */
+     transition: background 0.3s ease;
 }
 
 /* DOTTED GRID */
@@ -28,6 +29,7 @@ body.grid-dotted {
     background-image:
         radial-gradient(#8cbcff 1px, transparent 1px);
     background-size: 20px 20px;
+     transition: background 0.3s ease;
 }
 
 /* no grid */
@@ -79,6 +81,7 @@ body {
     transition: transform 0.1s ease-out;
     will-change: transform;
 }
+
 
 
 
