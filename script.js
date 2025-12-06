@@ -4,28 +4,28 @@
 let mode = 0;
 const btn = document.getElementById("gridToggle");
 
+// Apply default square grid on load
+document.body.classList.add("grid-square");
+btn.textContent = "Grid: Square";
+
 btn.addEventListener("click", () => {
+    // Remove all grid classes first
+    document.body.classList.remove("grid-square", "grid-dotted", "grid-none");
+
     mode++;
 
     if (mode === 1) {
-        // Dotted grid
-        document.body.classList.remove("grid-square");
         document.body.classList.add("grid-dotted");
         btn.textContent = "Grid: Dotted";
-    }
-    else if (mode === 2) {
-        // No grid
-        document.body.classList.remove("grid-dotted");
+    } else if (mode === 2) {
+        document.body.classList.add("grid-none");
         btn.textContent = "Grid: Off";
-    }
-    else {
-        // Back to square grid
+    } else {
         document.body.classList.add("grid-square");
         btn.textContent = "Grid: Square";
         mode = 0;
     }
 });
-
 
 /* ----------------------
    PROFILE IMAGE PARALLAX
@@ -59,4 +59,5 @@ circle.addEventListener('mouseleave', () => {
         scale(1)
     `;
 });
+
 
