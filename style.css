@@ -1,3 +1,25 @@
+/* DEFAULT — no grid */
+body {
+    background: white;
+    transition: background 0.3s ease;
+}
+
+/* SQUARE GRID */
+body.grid-square {
+    background-image:
+        linear-gradient(#d0e4ff 1px, transparent 1px),
+        linear-gradient(90deg, #d0e4ff 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* DOTTED GRID */
+body.grid-dotted {
+    background-image:
+        radial-gradient(#8cbcff 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+
 .profile-circle {
     width: 200px;      /* adjust to match your blue circle */
     height:  200px;
@@ -26,6 +48,7 @@
      transition: transform 0.1s ease-out; /* smooth tilt */
     will-change: transform; /* smoother animation */
 }
+
 
 
 
