@@ -7,7 +7,7 @@ html, body {
 
 
 /*DEFAULT — SQUARE GRID */
-body.grid-square {
+body {
     /* light grid lines */
     background-image:
         linear-gradient(to right, rgba(0, 120, 255, 0.15) 1px, transparent 1px),
@@ -33,7 +33,7 @@ body.grid-dotted {
 }
 
 /* no grid */
-body {
+body.grid-none {
     background: white;
     transition: background 0.3s ease;
 }
@@ -81,6 +81,7 @@ body {
     transition: transform 0.1s ease-out;
     will-change: transform;
 }
+
 
 
 
