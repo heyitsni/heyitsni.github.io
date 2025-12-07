@@ -124,11 +124,12 @@ body.grid-none {
 
 /* Center square handle */
 .cursor-center {
-    width: 7px;
-    height: 7px;
+    width: 10px;
+    height: 10px;
     background: #003a8c;
     position: absolute;
     top: calc(var(--y));
     left: calc(var(--x));
     transform: translate(-50%, -50%);
 }
+
