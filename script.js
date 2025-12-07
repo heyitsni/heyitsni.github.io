@@ -60,4 +60,12 @@ circle.addEventListener('mouseleave', () => {
     `;
 });
 
+document.addEventListener("mousemove", function(e) {
+    const crosshair = document.getElementById("crosshair");
+
+    // Move crosshair lines
+    crosshair.querySelector(".v-line").style.left = e.clientX + "px";
+    crosshair.querySelector(".h-line").style.top = e.clientY + "px";
+});
+
 
