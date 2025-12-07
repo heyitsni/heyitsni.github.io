@@ -1,64 +1,72 @@
-/* ----------------------
+/* ======================
    GRID TOGGLE
------------------------*/
-let mode = 0;
+====================== */
+
+let gridMode = 0; // 0 = square (default), 1 = dotted, 2 = off
 const btn = document.getElementById("gridToggle");
 
-// Apply default square grid on load
-document.body.classList.add("grid-square");
-btn.textContent = "Grid: Square";
+function updateGrid() {
+    document.body.classList.remove("grid-dotted", "grid-none");
 
-btn.addEventListener("click", () => {
-    // Remove all grid classes first
-    document.body.classList.remove("grid-square", "grid-dotted", "grid-none");
-
-    mode++;
-
-    if (mode === 1) {
+    if (gridMode === 0) {
+        // default square grid: base <body> style
+        if (btn) btn.textContent = "Grid: Square";
+    } else if (gridMode === 1) {
         document.body.classList.add("grid-dotted");
-        btn.textContent = "Grid: Dotted";
-    } else if (mode === 2) {
+        if (btn) btn.textContent = "Grid: Dotted";
+    } else if (gridMode === 2) {
         document.body.classList.add("grid-none");
-        btn.textContent = "Grid: Off";
-    } else {
-        document.body.classList.add("grid-square");
-        btn.textContent = "Grid: Square";
-        mode = 0;
+        if (btn) btn.textContent = "Grid: Off";
     }
-});
+}
 
-/* ----------------------
+if (btn) {
+    btn.addEventListener("click", () => {
+        gridMode = (gridMode + 1) % 3;
+        updateGrid();
+    });
+    // initial state
+    updateGrid();
+}
+
+/* ======================
    PROFILE IMAGE PARALLAX
------------------------*/
+====================== */
+
 const circle = document.querySelector('.profile-circle');
-const img = circle.querySelector('img');
+const img = circle ? circle.querySelector('img') : null;
 
-circle.addEventListener('mousemove', (e) => {
-    const rect = circle.getBoundingClientRect();
-    const x = e.clientX - rect.left; 
-    const y = e.clientY - rect.top;
+if (circle && img) {
+    circle.addEventListener('mousemove', (e) => {
+        const rect = circle.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
-    const rotateY = ((x / rect.width) - 0.5) * 30;
-    const rotateX = ((y / rect.height) - 0.5) * -30;
+        const rotateY = ((x / rect.width) - 0.5) * 30;
+        const rotateX = ((y / rect.height) - 0.5) * -30;
+        const depth = 12;
 
-    const depth = 12;
+        img.style.transform = `
+            rotateX(${rotateX}deg)
+            rotateY(${rotateY}deg)
+            translateZ(${depth}px)
+            scale(1.08)
+        `;
+    });
 
-    img.style.transform = `
-        rotateX(${rotateX}deg)
-        rotateY(${rotateY}deg)
-        translateZ(${depth}px)
-        scale(1.08)
-    `;
-});
+    circle.addEventListener('mouseleave', () => {
+        img.style.transform = `
+            rotateX(0deg)
+            rotateY(0deg)
+            translateZ(0)
+            scale(1)
+        `;
+    });
+}
 
-circle.addEventListener('mouseleave', () => {
-    img.style.transform = `
-        rotateX(0deg)
-        rotateY(0deg)
-        translateZ(0)
-        scale(1)
-    `;
-});
+/* ======================
+   AUTOCAD CROSSHAIR CURSOR
+====================== */
 
 document.addEventListener("mousemove", (e) => {
     const root = document.documentElement;
@@ -146,7 +154,6 @@ if (turntable && bgMusic) {
     turntable.addEventListener("click", async () => {
         try {
             if (!isMusicPlaying) {
-                // If no src loaded for any reason, ensure we have the current track set
                 if (!bgMusic.src) {
                     loadTrack(currentTrackIndex);
                 }
@@ -163,6 +170,3 @@ if (turntable && bgMusic) {
         }
     });
 }
-
-
-
