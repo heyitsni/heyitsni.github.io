@@ -105,6 +105,13 @@ body.grid-none {
     z-index: 9999;
 }
 
+/* The lines and center must also ignore pointer events */
+.custom-cursor::before,
+.custom-cursor::after,
+.cursor-center {
+    pointer-events: none;
+}
+
 /* Horizontal line */
 .custom-cursor::before {
     content: "";
@@ -258,3 +265,4 @@ body.grid-none {
     line-height: 1.3;
     pointer-events: none;
 }
+
