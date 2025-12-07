@@ -82,6 +82,40 @@ body.grid-none {
     will-change: transform;
 }
 
+/* Hide default cursor globally */
+body, html {
+  cursor: none;
+}
+
+/* Crosshair container */
+#crosshair {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Vertical line */
+#crosshair .v-line {
+  position: fixed;
+  width: 2px;
+  height: 100vh;
+  background: #002B80; /* dark blue */
+  left: 0;
+  top: 0;
+}
+
+/* Horizontal line */
+#crosshair .h-line {
+  position: fixed;
+  height: 2px;
+  width: 100vw;
+  background: #002B80; /* dark blue */
+  left: 0;
+  top: 0;
+}
+
 
 
 
