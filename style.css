@@ -104,7 +104,7 @@ body.grid-none {
     left: 0;
     width: 100vw;
     height: 1px;
-    background: #3A8CFF; /* dark blue */
+    background: #4DA3FF; /* dark blue */
     top: var(--cursor-y);
 }
 
@@ -115,7 +115,7 @@ body.grid-none {
     top: 0;
     height: 100vh;
     width: 1px;
-    background: #3A8CFF;
+    background: #4DA3FF;
     left: var(--cursor-x);
 }
 
@@ -131,6 +131,7 @@ body.grid-none {
     /* no transform needed now */
     border-radius: 2px;       /* optional */
 }
+
 
 
 
