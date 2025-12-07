@@ -66,6 +66,31 @@ document.addEventListener("mousemove", (e) => {
     root.style.setProperty("--cursor-y", e.clientY + "px");
 });
 
+/* ======================
+   TURNTABLE MUSIC CONTROL
+====================== */
+
+const turntable = document.getElementById("turntable");
+const bgMusic = document.getElementById("bg-music");
+let isMusicPlaying = false;
+
+if (turntable && bgMusic) {
+    turntable.addEventListener("click", async () => {
+        try {
+            if (!isMusicPlaying) {
+                await bgMusic.play();
+                isMusicPlaying = true;
+                turntable.classList.add("playing");
+            } else {
+                bgMusic.pause();
+                isMusicPlaying = false;
+                turntable.classList.remove("playing");
+            }
+        } catch (err) {
+            console.log("Audio play might be blocked by browser:", err);
+        }
+    });
+}
 
 
 
