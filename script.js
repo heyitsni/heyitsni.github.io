@@ -147,6 +147,10 @@ document.addEventListener("DOMContentLoaded", () => {
             nextTrack(true);
         });
     }
+    bgMusic.addEventListener("error", () => {
+    console.log("AUDIO ERROR:", bgMusic.error);
+});
+
 
     /* ======================
        TURNTABLE CLICK CONTROL
@@ -176,3 +180,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
