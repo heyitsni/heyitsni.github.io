@@ -176,6 +176,8 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("AUDIO ERROR:", bgMusic.error);
 });
 
+const bgMusic = document.getElementById("bg-music");
+bgMusic.volume = 0.35;   // 35% volume – adjust to taste
 
     /* ======================
        TURNTABLE CLICK CONTROL
@@ -205,6 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
 
 
 
