@@ -60,14 +60,10 @@ circle.addEventListener('mouseleave', () => {
     `;
 });
 
-const cursor = document.querySelector('.custom-cursor');
-const root = document.documentElement;
-
-document.addEventListener('mousemove', e => {
-    root.style.setProperty('--x', e.clientX);
-    root.style.setProperty('--y', e.clientY);
+document.addEventListener("mousemove", e => {
+    document.documentElement.style.setProperty('--x', e.clientX + "px");
+    document.documentElement.style.setProperty('--y', e.clientY + "px");
 });
-
 
 
 
