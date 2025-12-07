@@ -124,10 +124,11 @@ body.grid-none {
     position: absolute;
     width: 5px;
     height: 5px;
-    background: #3A8CFF;
+    background: #7bbaff;
     top: var(--cursor-y);
     left: var(--cursor-x);
     transform: translate(-50%, -50%);
     border-radius: 1px; /* remove if you want a perfect sharp square */
 }
+
 
