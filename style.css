@@ -104,7 +104,7 @@ body.grid-none {
     left: 0;
     width: 100vw;
     height: 1px;
-    background: #0050b8; /* dark blue */
+    background: #3A8CFF; /* dark blue */
     top: var(--cursor-y);
 }
 
@@ -115,7 +115,7 @@ body.grid-none {
     top: 0;
     height: 100vh;
     width: 1px;
-    background: #0050b8;
+    background: #3A8CFF;
     left: var(--cursor-x);
 }
 
@@ -124,9 +124,10 @@ body.grid-none {
     position: absolute;
     width: 5px;
     height: 5px;
-    background: #0050b8;
+    background: #3A8CFF;
     top: var(--cursor-y);
     left: var(--cursor-x);
     transform: translate(-50%, -50%);
     border-radius: 1px; /* remove if you want a perfect sharp square */
 }
+
