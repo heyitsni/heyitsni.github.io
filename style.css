@@ -82,10 +82,7 @@ body.grid-none {
     will-change: transform;
 }
 
-/* Hide default cursor globally */
-body, html {
-  cursor: none;
-}
+
 
 /* Custom AutoCAD-style cursor */
 .custom-cursor {
@@ -136,6 +133,7 @@ body, html {
     transform: translate(-50%, -50%);
     border-radius: 1px;        /* optional, remove for sharp edges */
 }
+
 
 
 
