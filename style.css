@@ -145,6 +145,111 @@ body.grid-none {
     border-radius: 2px;       /* optional */
 }
 
+/* ========= TURNTABLE ========= */
+
+.turntable {
+    position: fixed;
+    top: 70px;
+    right: 40px;
+    width: 140px;
+    height: 140px;
+    cursor: pointer;
+    z-index: 6000; /* below crosshair, above grid */
+}
+
+/* Blobby background shapes */
+.tt-blob {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(135, 182, 255, 0.35);
+    filter: blur(0.5px);
+}
+
+.tt-blob-back {
+    width: 130px;
+    height: 90px;
+    top: 18px;
+    left: -10px;
+}
+
+.tt-blob-front {
+    width: 110px;
+    height: 80px;
+    bottom: 0;
+    right: -5px;
+    background: rgba(80, 120, 255, 0.7);
+}
+
+/* Record */
+.tt-record {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #333 0, #000 50%, #101010 100%);
+    top: 15px;
+    left: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    transform-origin: center;
+}
+
+/* Label in middle of record */
+.tt-label {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e54343;
+    box-shadow: 0 0 0 4px #caa27c;
+}
+
+/* Tone arm */
+.tt-arm {
+    position: absolute;
+    width: 70px;
+    height: 6px;
+    background: #d3d3d3;
+    border-radius: 999px;
+    top: 32px;
+    right: 4px;
+    transform-origin: 10% 50%;
+    transform: rotate(20deg);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.tt-arm::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #b3b3b3;
+    right: -4px;
+    top: -4px;
+}
+
+/* Animation when playing */
+.turntable.playing .tt-record {
+    animation: tt-spin 3.3s linear infinite;
+}
+
+.turntable.playing .tt-arm {
+    animation: tt-arm-swing 3.3s ease-in-out infinite;
+}
+
+@keyframes tt-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+@keyframes tt-arm-swing {
+    0%, 100% { transform: rotate(20deg); }
+    50%      { transform: rotate(12deg); }
+}
 
 
 
