@@ -84,68 +84,51 @@ body.grid-none {
 
 
 
-/* REMOVE DEFAULT CURSOR */
+/* Remove default cursor everywhere */
 * {
     cursor: none !important;
 }
 
-/* AUTO-CAD STYLE CROSSHAIR (FULLSCREEN ARMS) */
+/* Fullscreen cursor container (fixed in place, never moves) */
 .custom-cursor {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;   /* full width */
-    height: 100vh;  /* full height */
-
+    width: 100vw;
+    height: 100vh;
     pointer-events: none;
     z-index: 9999;
-
-    /* Move center of crosshair to mouse */
-    transform: translate(calc(var(--x) * 1px), calc(var(--y) * 1px));
 }
 
-/* Horizontal + vertical lines */
-.custom-cursor::before,
+/* Horizontal line */
+.custom-cursor::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    height: 2px;
+    background: #003a8c;
+    top: var(--y);
+}
+
+/* Vertical line */
 .custom-cursor::after {
     content: "";
     position: absolute;
-    background: #003a8c;
-}
-
-/* Horizontal line — full width */
-.custom-cursor::before {
-    width: 100vw;
-    height: 2px;
-    top: calc(var(--y) * 1px);
-    left: 0;
-}
-
-/* Vertical line — full height */
-.custom-cursor::after {
-    width: 2px;
-    height: 100vh;
-    left: calc(var(--x) * 1px);
     top: 0;
+    height: 100vh;
+    width: 2px;
+    background: #003a8c;
+    left: var(--x);
 }
 
-/* ⭐ SNAP HANDLE (CENTER SQUARE) */
+/* Center square handle */
 .cursor-center {
     width: 7px;
     height: 7px;
     background: #003a8c;
     position: absolute;
-    top: calc(var(--y) * 1px);
-    left: calc(var(--x) * 1px);
+    top: calc(var(--y));
+    left: calc(var(--x));
     transform: translate(-50%, -50%);
-    border-radius: 1px;
 }
-
-
-
-
-
-
-
-
-
-
