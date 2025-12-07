@@ -153,33 +153,28 @@ document.addEventListener("DOMContentLoaded", () => {
     ====================== */
 
     if (turntable && bgMusic) {
-        turntable.addEventListener("click", () => {
-            // always ensure we have a track loaded
-            if (!bgMusic.src) {
-                loadTrack(currentTrackIndex);
-            }
+    turntable.addEventListener("click", () => {
+        // ensure a track is loaded
+        if (!bgMusic.src) {
+            loadTrack(currentTrackIndex);
+        }
 
-            // toggle desired state first
-            if (!isMusicPlaying) {
-                isMusicPlaying = true;
-                turntable.classList.add("playing");
+        // toggle state
+        isMusicPlaying = !isMusicPlaying;
 
-                bgMusic
-                    .play()
-                    .then(() => {
-                        // audio successfully playing
-                    })
-                    .catch((err) => {
-                        console.log("Audio play failed:", err);
-                        // revert state if it failed
-                        isMusicPlaying = false;
-                        turntable.classList.remove("playing");
-                    });
-            } else {
-                isMusicPlaying = false;
-                turntable.classList.remove("playing");
-                bgMusic.pause();
-            }
+        if (isMusicPlaying) {
+            turntable.classList.add("playing");
+            bgMusic.play().catch(err => {
+                console.log("Audio play failed:", err);
+            });
+        } else {
+            turntable.classList.remove("playing");
+            bgMusic.pause();
+        }
+    });
+}
+
         });
     }
 });
+
