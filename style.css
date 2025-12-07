@@ -84,16 +84,24 @@ body.grid-none {
 
 
 
-/* Custom AutoCAD-style cursor */
+/* REMOVE DEFAULT CURSOR */
+* {
+    cursor: none !important;
+}
+
+/* AUTO-CAD STYLE CROSSHAIR (FULLSCREEN ARMS) */
 .custom-cursor {
-    width: 40px;              /* full-size crosshair arms */
-    height: 40px;
     position: fixed;
     top: 0;
     left: 0;
+    width: 100vw;   /* full width */
+    height: 100vh;  /* full height */
+
     pointer-events: none;
     z-index: 9999;
-    transform: translate(-50%, -50%);
+
+    /* Move center of crosshair to mouse */
+    transform: translate(calc(var(--x) * 1px), calc(var(--y) * 1px));
 }
 
 /* Horizontal + vertical lines */
@@ -101,38 +109,37 @@ body.grid-none {
 .custom-cursor::after {
     content: "";
     position: absolute;
-    background: #003a8c;       /* dark blue like AutoCAD */
+    background: #003a8c;
 }
 
-/* Horizontal line */
+/* Horizontal line — full width */
 .custom-cursor::before {
-    width: 40px;
+    width: 100vw;
     height: 2px;
-    top: 50%;
+    top: calc(var(--y) * 1px);
     left: 0;
-    transform: translateY(-50%);
 }
 
-/* Vertical line */
+/* Vertical line — full height */
 .custom-cursor::after {
     width: 2px;
-    height: 40px;
+    height: 100vh;
+    left: calc(var(--x) * 1px);
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
-/* ⭐ NEW: Small square in the center (the handle) */
-.custom-cursor .cursor-center {
-    width: 6px;
-    height: 6px;
+/* ⭐ SNAP HANDLE (CENTER SQUARE) */
+.cursor-center {
+    width: 7px;
+    height: 7px;
     background: #003a8c;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: calc(var(--y) * 1px);
+    left: calc(var(--x) * 1px);
     transform: translate(-50%, -50%);
-    border-radius: 1px;        /* optional, remove for sharp edges */
+    border-radius: 1px;
 }
+
 
 
 
