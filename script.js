@@ -153,28 +153,24 @@ document.addEventListener("DOMContentLoaded", () => {
     ====================== */
 
     if (turntable && bgMusic) {
-    turntable.addEventListener("click", () => {
-        // ensure a track is loaded
-        if (!bgMusic.src) {
-            loadTrack(currentTrackIndex);
-        }
+        turntable.addEventListener("click", () => {
+            // ensure a track is loaded
+            if (!bgMusic.src) {
+                loadTrack(currentTrackIndex);
+            }
 
-        // toggle state
-        isMusicPlaying = !isMusicPlaying;
+            // toggle state
+            isMusicPlaying = !isMusicPlaying;
 
-        if (isMusicPlaying) {
-            turntable.classList.add("playing");
-            bgMusic.play().catch(err => {
-                console.log("Audio play failed:", err);
-            });
-        } else {
-            turntable.classList.remove("playing");
-            bgMusic.pause();
-        }
-    });
-}
-
+            if (isMusicPlaying) {
+                turntable.classList.add("playing");
+                bgMusic.play().catch((err) => {
+                    console.log("Audio play failed:", err);
+                });
+            } else {
+                turntable.classList.remove("playing");
+                bgMusic.pause();
+            }
         });
     }
 });
-
