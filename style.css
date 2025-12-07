@@ -122,13 +122,15 @@ body.grid-none {
 /* Small square handle at intersection */
 .cursor-center {
     position: absolute;
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
     background: #7bbaff;
-    top: var(--cursor-y);
-    left: var(--cursor-x);
-    transform: translate(-50%, -50%);
-    border-radius: 1px; /* remove if you want a perfect sharp square */
+    /* place its top-left corner 3px above/left of the cursor */
+    top: calc(var(--cursor-y) - 3px);
+    left: calc(var(--cursor-x) - 3px);
+    /* no transform needed now */
+    border-radius: 2px;       /* optional */
 }
+
 
 
