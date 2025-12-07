@@ -16,8 +16,8 @@ body {
         linear-gradient(to right, rgba(0, 120, 255, 0.3) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(0, 120, 255, 0.3) 1px, transparent 1px);
     background-size:
-        20px 20px, 20px 20px,     /* light grid */
-        100px 100px, 100px 100px; /* every 5 squares = bolder line */
+        20px 20px, 20px 20px,
+        100px 100px, 100px 100px;
     transition: background 0.3s ease;
 }
 
@@ -254,7 +254,7 @@ body.grid-none {
 /* Track title label */
 .track-title {
     position: fixed;
-    top: 259px;  /* adjust to taste */
+    top: 259px;
     right: 40px;
     font-size: 11px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
@@ -265,4 +265,3 @@ body.grid-none {
     line-height: 1.3;
     pointer-events: none;
 }
-
