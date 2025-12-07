@@ -8,16 +8,15 @@
 </head>
 <body>
 
-<div class="profile-circle">
-    <img src="NI.jpeg" alt="Profile Image">
-</div>
+    <!-- Profile picture -->
+    <div class="profile-circle">
+        <img src="NI.jpeg" alt="Profile Image">
+    </div>
 
-<button id="gridToggle" class="grid-btn">Grid: Square</button>
+    <!-- Grid toggle button -->
+    <button id="gridToggle" class="grid-btn">Grid: Square</button>
 
- <div class="custom-cursor">
-  <div class="cursor-center"></div>
-</div>
- <!-- Turntable (top-right) -->
+    <!-- Turntable (top-right) -->
     <div class="turntable" id="turntable">
         <div class="tt-blob tt-blob-back"></div>
         <div class="tt-blob tt-blob-front"></div>
@@ -28,20 +27,18 @@
 
         <div class="tt-arm"></div>
     </div>
-   <div class="track-title" id="trackTitle"></div>
-   
-    <!-- Playlist audio (no src here – JS will handle it) -->
-<audio id="bg-music" preload="auto"></audio>
 
+    <!-- Track title display -->
+    <div class="track-title" id="trackTitle"></div>
 
+    <!-- Custom AutoCAD-style cursor -->
+    <div class="custom-cursor">
+        <div class="cursor-center"></div>
+    </div>
 
-<script src="script.js"></script>
+    <!-- Playlist audio (src will be set by JS) -->
+    <audio id="bg-music" preload="auto"></audio>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
