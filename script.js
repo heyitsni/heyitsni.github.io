@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
             bgMusic
                 .play()
                 .then(() => {
-                    // keep playing
+                    // track playing
                 })
                 .catch((err) => {
                     console.log("Autoplay blocked on next track:", err);
@@ -154,6 +154,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (turntable && bgMusic) {
         turntable.addEventListener("click", () => {
+            console.log("Turntable clicked");
+
             // ensure a track is loaded
             if (!bgMusic.src) {
                 loadTrack(currentTrackIndex);
