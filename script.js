@@ -78,6 +78,8 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ======================
        JAZZ PLAYLIST for TURNTABLE
     ====================== */
+const crackle = document.getElementById("crackle");
+if (crackle) crackle.volume = 0.15;
 
     const playlist = [
     {
@@ -207,6 +209,7 @@ bgMusic.volume = 0.35;   // 35% volume – adjust to taste
         });
     }
 });
+
 
 
 
