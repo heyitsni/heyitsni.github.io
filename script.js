@@ -80,27 +80,11 @@ document.addEventListener("DOMContentLoaded", () => {
     ====================== */
 
     const playlist = [
-        {
-            title: "Soulful Vintage Piano Blues",
-            url: "https://cdn.pixabay.com/audio/2022/04/08/audio_44df01f84f.mp3",
-        },
-        {
-            title: "Old-School Jazz Piano Swing",
-            url: "https://cdn.pixabay.com/audio/2022/04/20/audio_a6e8dfcade.mp3",
-        },
-        {
-            title: "Slow Soul Jazz",
-            url: "https://cdn.pixabay.com/audio/2023/02/07/audio_4b3b858727.mp3",
-        },
-        {
-            title: "Ragtime Piano (Dee Yan-Key)",
-            url: "https://files.freemusicarchive.org/storage-fmz/freemusicarchive.org/music/Dee_Yan-Key/New_York_Ragtime_Band/Dee_Yan-Key_-_01_-_Ragtime_Piano.mp3",
-        },
-        {
-            title: "Vintage Soul / Gospel Jazz",
-            url: "https://cdn.pixabay.com/audio/2023/09/12/audio_314ab3f588.mp3",
-        },
-    ];
+    {
+        title: "Jazz Piano",
+        url: "a-jazz-piano-110481.mp3",   // local file in your repo
+    }
+];
 
     let currentTrackIndex = 0;
 
@@ -180,4 +164,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
 
