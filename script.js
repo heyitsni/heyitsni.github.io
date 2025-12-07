@@ -81,10 +81,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const playlist = [
     {
-        title: "Jazz Piano",
-        url: "a-jazz-piano-110481.mp3",   // local file in your repo
+        title: "A Jazz Piano",
+        url: "a-jazz-piano-110481.mp3"      // make sure filename matches your file
+    },
+    {
+        title: "Blues du Départ",
+        url: "blues-du-depart-335178.mp3"
+    },
+    {
+        title: "Gimme Gimme Jazz",
+        url: "gimme-gimme-jazz-179073.mp3"
+    },
+    {
+        title: "Guitar Blues",
+        url: "guitar-blues-320298.mp3"
+    },
+    {
+        title: "Last Blues Before Sleeping",
+        url: "last-blues-before-sleeping-330428.mp3"
+    },
+    {
+        title: "Ogi – Feel The Beat (Jazz Expresso)",
+        url: "ogi-feel-the-beat-jazz-expresso-191266.mp3"
+    },
+    {
+        title: "Romantic Blues",
+        url: "romantic-blues-286563.mp3"
+    },
+    {
+        title: "S_xy Blues Soul",
+        url: "s_xy-blues-soul-286560.mp3"
+    },
+    {
+        title: "Slow Blues",
+        url: "slow-blues-382029.mp3"
+    },
+    {
+        title: "That Jazz",
+        url: "that-jazz-260655.mp3"
+    },
+    {
+        title: "The Best Jazz Club in New Orleans",
+        url: "the-best-jazz-club-in-new-orleans-164472.mp3"
     }
 ];
+
 
     let currentTrackIndex = 0;
 
@@ -164,5 +205,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
 
 
