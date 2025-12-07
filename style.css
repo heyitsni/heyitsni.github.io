@@ -43,7 +43,7 @@ body.grid-none {
     position: fixed;
     top: 5px;
     right: 5px;
-    padding: 6px 10px;
+    padding: 6px 14px;
     background: #2b6cd4;
     color: white;
     border: none;
@@ -51,6 +51,19 @@ body.grid-none {
     cursor: pointer;
     font-weight: 400;
     z-index: 9999;
+
+    /* smooth animation */
+    transition: 
+        transform 0.18s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+/* HOVER EFFECT — pop + glow */
+.grid-btn:hover {
+    transform: scale(1.12); /* slight pop */
+    background: #3078e6; /* slightly brighter blue */
+    box-shadow: 0 4px 14px rgba(48, 120, 230, 0.45); /* soft glow */
 }
 
 /* PROFILE CIRCLE */
@@ -131,6 +144,7 @@ body.grid-none {
     /* no transform needed now */
     border-radius: 2px;       /* optional */
 }
+
 
 
 
