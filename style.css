@@ -87,34 +87,56 @@ body, html {
   cursor: none;
 }
 
-/* Crosshair container */
-#crosshair {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
+/* Custom AutoCAD-style cursor */
+.custom-cursor {
+    width: 40px;              /* full-size crosshair arms */
+    height: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
 }
 
-/* Vertical line */
-#crosshair .v-line {
-  position: fixed;
-  width: 2px;
-  height: 100vh;
-  background: #002B80; /* dark blue */
-  left: 0;
-  top: 0;
+/* Horizontal + vertical lines */
+.custom-cursor::before,
+.custom-cursor::after {
+    content: "";
+    position: absolute;
+    background: #003a8c;       /* dark blue like AutoCAD */
 }
 
 /* Horizontal line */
-#crosshair .h-line {
-  position: fixed;
-  height: 2px;
-  width: 100vw;
-  background: #002B80; /* dark blue */
-  left: 0;
-  top: 0;
+.custom-cursor::before {
+    width: 40px;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
 }
+
+/* Vertical line */
+.custom-cursor::after {
+    width: 2px;
+    height: 40px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ⭐ NEW: Small square in the center (the handle) */
+.custom-cursor .cursor-center {
+    width: 6px;
+    height: 6px;
+    background: #003a8c;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1px;        /* optional, remove for sharp edges */
+}
+
 
 
 
