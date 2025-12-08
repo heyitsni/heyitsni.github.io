@@ -1,5 +1,4 @@
 /* ============= GLOBAL ============= */
-
 html, body {
     height: 100%;
     margin: 0;
@@ -9,10 +8,8 @@ html, body {
 /* DEFAULT — SQUARE GRID (base) */
 body {
     background-image:
-        /* light grid lines */
         linear-gradient(to right, rgba(0, 120, 255, 0.15) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(0, 120, 255, 0.15) 1px, transparent 1px),
-        /* bold grid every 5 cells */
         linear-gradient(to right, rgba(0, 120, 255, 0.3) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(0, 120, 255, 0.3) 1px, transparent 1px);
     background-size:
@@ -33,7 +30,6 @@ body.grid-none {
 }
 
 /* ============= GRID TOGGLE BUTTON ============= */
-
 .grid-btn {
     position: fixed;
     top: 5px;
@@ -46,14 +42,12 @@ body.grid-none {
     cursor: pointer;
     font-weight: 400;
     z-index: 9999;
-
     transition:
         transform 0.18s ease,
         box-shadow 0.25s ease,
         background 0.25s ease;
 }
 
-/* HOVER EFFECT — pop + glow */
 .grid-btn:hover {
     transform: scale(1.12);
     background: #3078e6;
@@ -73,38 +67,28 @@ body.grid-none {
     height: 200px;
     border-radius: 50%;
     overflow: hidden;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* margins moved to .profile-area */
     perspective: 800px;
     transition: transform 0.2s ease-out;
-
-    /* for bubble positioning */
     position: relative;
 }
 
-/* PROFILE IMAGE */
 .profile-circle img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-
     transition: transform 0.1s ease-out;
     will-change: transform;
 }
 
 /* ============= AUTOCAD-STYLE CROSSHAIR CURSOR ============= */
-
-/* Hide default cursor everywhere */
 * {
     cursor: none !important;
 }
 
-/* Fullscreen crosshair layer */
 .custom-cursor {
     position: fixed;
     inset: 0;
@@ -112,14 +96,12 @@ body.grid-none {
     z-index: 9999;
 }
 
-/* The lines and center must also ignore pointer events */
 .custom-cursor::before,
 .custom-cursor::after,
 .cursor-center {
     pointer-events: none;
 }
 
-/* Horizontal line */
 .custom-cursor::before {
     content: "";
     position: absolute;
@@ -130,7 +112,6 @@ body.grid-none {
     top: var(--cursor-y);
 }
 
-/* Vertical line */
 .custom-cursor::after {
     content: "";
     position: absolute;
@@ -141,7 +122,6 @@ body.grid-none {
     left: var(--cursor-x);
 }
 
-/* Small square handle at intersection */
 .cursor-center {
     position: absolute;
     width: 6px;
@@ -153,7 +133,6 @@ body.grid-none {
 }
 
 /* ============= TURNTABLE ============= */
-
 .turntable {
     position: fixed;
     top: 70px;
@@ -161,10 +140,9 @@ body.grid-none {
     width: 140px;
     height: 140px;
     cursor: pointer;
-    z-index: 6000; /* below crosshair, above grid */
+    z-index: 6000;
 }
 
-/* Blobby background shapes */
 .tt-blob {
     position: absolute;
     border-radius: 50%;
@@ -187,7 +165,6 @@ body.grid-none {
     background: rgba(80, 120, 255, 0.7);
 }
 
-/* Record */
 .tt-record {
     position: absolute;
     width: 110px;
@@ -196,16 +173,13 @@ body.grid-none {
     background: radial-gradient(circle at 30% 30%, #333 0, #000 50%, #101010 100%);
     top: 15px;
     left: 15px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     box-shadow: 0 8px 18px rgba(0,0,0,0.25);
     transform-origin: center;
 }
 
-/* Label in middle of record */
 .tt-label {
     width: 32px;
     height: 32px;
@@ -214,7 +188,6 @@ body.grid-none {
     box-shadow: 0 0 0 4px #3F2AEE;
 }
 
-/* Tone arm */
 .tt-arm {
     position: absolute;
     width: 70px;
@@ -239,7 +212,6 @@ body.grid-none {
     top: -4px;
 }
 
-/* Animation when playing */
 .turntable.playing .tt-record {
     animation: tt-spin 3.3s linear infinite;
 }
@@ -258,7 +230,6 @@ body.grid-none {
     50%      { transform: rotate(12deg); }
 }
 
-/* Track title label */
 .track-title {
     position: fixed;
     top: 220px;
@@ -273,13 +244,11 @@ body.grid-none {
     pointer-events: none;
 }
 
-/* Floating animation for blobs */
 @keyframes blob-float {
     0%, 100% { transform: translateY(0) scale(1); }
     50%      { transform: translateY(-6px) scale(1.03); }
 }
 
-/* Apply floating */
 .tt-blob-back {
     animation: blob-float 6s ease-in-out infinite;
     animation-delay: 0.3s;
@@ -290,14 +259,12 @@ body.grid-none {
     animation-delay: 0.8s;
 }
 
-/* Hover attract effect */
 .turntable:hover .tt-blob {
     filter: blur(1px) brightness(1.25);
     transform: scale(1.08);
     transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-/* Light glow on hover */
 .turntable:hover .tt-blob-front {
     box-shadow: 0 0 18px rgba(80,120,255,0.45);
 }
@@ -309,30 +276,25 @@ body.grid-none {
 /* --- CLOUD SPEECH BUBBLE (Georgia font) --- */
 .speech-bubble {
     position: absolute;
-    left: 240px;          /* adjust as needed */
+    left: 240px;
     top: -10px;
-
     padding: 14px 22px;
     background: #ffffff;
     color: #2b3b6f;
     font-size: 15px;
     font-family: Georgia, serif;
-
     border: 3px solid #3F2AEE;
     border-radius: 50px;
-
     display: inline-block;
     text-align: center;
     white-space: nowrap;
-
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-
     opacity: 0;
     transform: translateY(6px);
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* Bubble lobes to create cloud look */
+/* Cloud lobes */
 .speech-bubble::before,
 .speech-bubble::after {
     content: "";
@@ -342,7 +304,6 @@ body.grid-none {
     border-radius: 50%;
 }
 
-/* Large lobe */
 .speech-bubble::before {
     width: 24px;
     height: 24px;
@@ -350,7 +311,6 @@ body.grid-none {
     top: 10px;
 }
 
-/* Small lobe */
 .speech-bubble::after {
     width: 16px;
     height: 16px;
@@ -358,8 +318,9 @@ body.grid-none {
     top: 28px;
 }
 
-/* Optional dotted trail (extra bubbles) */
-.speech-dot-1, .speech-dot-2 {
+/* Trail dots */
+.speech-dot-1,
+.speech-dot-2 {
     position: absolute;
     background: #3F2AEE;
     border-radius: 50%;
@@ -381,70 +342,51 @@ body.grid-none {
     top: 32px;
 }
 
-/* Reveal when hovering profile */
-.profile-area:hover .speech-bubble,
-.profile-area:hover .speech-dot-1,
-.profile-area:hover .speech-dot-2 {
-    opacity: 1;
-    transform: translateY(0);
+/* --- VERTICAL REEL VIDEO BOX --- */
+.intro-link {
+    text-decoration: none;
 }
 
-
-/* --- VERTICAL REEL VIDEO BOX --- */
 .intro-video {
     position: absolute;
     left: 220px;
     top: 70px;
-
     width: 160px;
     height: calc(160px * 1.777); /* 9:16 */
-
     background: #2b6cd4;
     border-radius: 24px;
-
     box-shadow: 0 10px 22px rgba(0,0,0,0.18);
-
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-
     opacity: 0;
-    visibility: hidden;          /* 👈 add this */
+    visibility: hidden;
     transform: translateY(8px);
     transition: opacity 0.25s ease, transform 0.25s ease;
-
     pointer-events: auto;
 }
 
-
-/* Make video fit perfectly */
 .intro-video video {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+/* Hover: reveal bubble, dots, and video */
+.profile-area:hover .speech-bubble {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-/* When hovering the profile area, reveal bubble + video */
-.profile-area:hover .speech-bubble,
+.profile-area:hover .speech-dot-1,
+.profile-area:hover .speech-dot-2 {
+    opacity: 1;
+}
+
 .profile-area:hover .intro-video {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
     pointer-events: auto;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
