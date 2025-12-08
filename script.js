@@ -204,4 +204,38 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+        /* ======================
+       HEY ITS NI – HOVER TYPEWRITER
+    ====================== */
+
+    const heyEl = document.getElementById("heyItsNi");
+
+    if (heyEl) {
+        const fullText = heyEl.textContent;   // "hey, its Ni"
+        heyEl.dataset.fullText = fullText;
+
+        heyEl.addEventListener("mouseenter", () => {
+            // prevent re-starting if already typing
+            if (heyEl.classList.contains("typing")) return;
+
+            const text = heyEl.dataset.fullText;
+            let i = 0;
+
+            heyEl.classList.add("typing");
+            heyEl.textContent = "";
+
+            const interval = setInterval(() => {
+                heyEl.textContent = text.slice(0, i);
+                i++;
+
+                if (i > text.length) {
+                    clearInterval(interval);
+                    heyEl.textContent = text;           // final full text
+                    heyEl.classList.remove("typing");   // stop cursor blink
+                }
+            }, 80); // typing speed (ms per character)
+        });
+    }
+
 });
+
