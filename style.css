@@ -328,9 +328,11 @@ body.grid-none {
     box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 
     opacity: 0;
+    visibility: hidden;          /* 👈 add this */
     transform: translateY(5px);
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
+
 
 /* Additional cloud “puffs” */
 .speech-bubble::before,
@@ -399,6 +401,7 @@ body.grid-none {
     transform: translateY(0);
     pointer-events: auto;
 }
+
 
 
 
