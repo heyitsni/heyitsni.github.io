@@ -203,7 +203,7 @@ body.grid-none {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: #e54343;
+    background: #C6DCFF;
     box-shadow: 0 0 0 4px #3F2AEE;
 }
 
@@ -298,6 +298,7 @@ body.grid-none {
 .turntable:hover .tt-blob-back {
     box-shadow: 0 0 14px rgba(135,182,255,0.35);
 }
+
 
 
 
