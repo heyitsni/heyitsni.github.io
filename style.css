@@ -309,21 +309,20 @@ body.grid-none {
 /* Speech bubble "Hey, its Ni!" */
 .speech-bubble {
     position: absolute;
-    left: 220px;      /* push to the right of the circle */
-    top: -10px;       /* a bit above */
+    left: 190px;         /* a bit to the right of the circle */
+    top: -25px;          /* slightly above the top edge */
     padding: 6px 14px;
     background: #ffffff;
     color: #2b3b6f;
     font-size: 12px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-    border-radius: 16px;
+    border-radius: 999px;
     box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 
-    /* little cloud shape */
     border: 2px solid #4a76ff;
     white-space: nowrap;
 
-    /* HIDDEN by default */
+    /* hidden by default */
     opacity: 0;
     visibility: hidden;
     transform: translateY(4px);
@@ -331,18 +330,20 @@ body.grid-none {
     transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
 }
 
-/* Bubble tail */
+/* Little round dot tail, like a comic bubble */
 .speech-bubble::after {
     content: "";
     position: absolute;
-    left: 15px;
-    bottom: -10px;
-    width: 14px;
-    height: 14px;
+    left: 12px;          /* where the bubble points toward the circle */
+    top: 100%;
+    width: 10px;
+    height: 10px;
     background: #ffffff;
-    border-left: 2px solid #4a76ff;
-    border-bottom: 2px solid #4a76ff;
-    transform: rotate(45deg);
+    border-radius: 50%;
+    border: 2px solid #4a76ff;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    transform: translateY(-3px) rotate(45deg);
 }
 
 /* Blue rounded video container */
@@ -371,13 +372,15 @@ body.grid-none {
     transition: opacity 0.24s ease, transform 0.24s ease, visibility 0.24s ease;
 }
 
-/* Make the Instagram iframe fill the inner area */
+/* Make the Instagram embed fill the box and crop a bit of the header */
 .intro-video iframe {
-    width: 100%;
-    height: 100%;
+    width: 115%;
+    height: 115%;
     border: 0;
-    border-radius: 18px;  /* round the IG card corners to match */
+    border-radius: 18px;
+    transform: translateY(-8%) translateX(-7%);
 }
+
 
 /* When hovering the profile area, reveal bubble + video */
 .profile-area:hover .speech-bubble,
@@ -387,6 +390,7 @@ body.grid-none {
     transform: translateY(0);
     pointer-events: auto;
 }
+
 
 
 
