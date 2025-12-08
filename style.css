@@ -274,7 +274,7 @@ body.grid-none {
     box-shadow: 0 0 14px rgba(135,182,255,0.35);
 }
 
-/* --- CLOUD SPEECH BUBBLE + DOTS --- */
+/* --- SPEECH BUBBLE + DOTS --- */
 
 /* main bubble */
 .speech-bubble {
@@ -291,38 +291,12 @@ body.grid-none {
     white-space: nowrap;
 
     border: 3px solid #3F2AEE;
-    border-radius: 999px;       /* pill base */
+    border-radius: 999px;              /* smooth pill bubble */
     box-shadow: 0 4px 10px rgba(0,0,0,0.12);
 
     opacity: 0;
     transform: translateY(6px);
     transition: opacity 0.25s ease, transform 0.25s ease;
-    z-index: 2;                 /* above lobes */
-}
-
-/* round “cloud” lobes that sit partly behind the pill */
-.speech-lobe {
-    position: absolute;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: #ffffff;
-    border: 3px solid #3F2AEE;
-
-    opacity: 0;
-    transform: translateY(6px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
-    z-index: 1;                 /* behind bubble */
-}
-
-.speech-lobe-left {
-    left: 248px;
-    top: -32px;
-}
-
-.speech-lobe-right {
-    left: 298px;
-    top: -32px;
 }
 
 /* small dots leading towards the head */
@@ -334,7 +308,6 @@ body.grid-none {
     opacity: 0;
     transform: translateY(6px);
     transition: opacity 0.25s ease, transform 0.25s ease;
-    z-index: 1;
 }
 
 .speech-dot-1 {
@@ -351,13 +324,13 @@ body.grid-none {
     top: 38px;
 }
 
-/* Hover: reveal bubble, lobes, dots, and video */
+/* Hover: reveal bubble, dots, and video */
 .profile-area:hover .speech-bubble,
-.profile-area:hover .speech-lobe,
 .profile-area:hover .speech-dot {
     opacity: 1;
     transform: translateY(0);
 }
+
 
 /* --- VERTICAL REEL VIDEO BOX --- */
 .intro-link {
@@ -397,3 +370,4 @@ body.grid-none {
     transform: translateY(0);
     pointer-events: auto;
 }
+
