@@ -309,16 +309,15 @@ body.grid-none {
 /* Speech bubble "Hey, its Ni!" */
 .speech-bubble {
     position: absolute;
-    left: 190px;         /* a bit to the right of the circle */
-    top: -25px;          /* slightly above the top edge */
-    padding: 6px 14px;
+    left: 150px;          /* closer to the circle */
+    top: -40px;           /* higher above */
+    padding: 6px 18px;
     background: #ffffff;
     color: #2b3b6f;
     font-size: 12px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
     border-radius: 999px;
     box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-
     border: 2px solid #4a76ff;
     white-space: nowrap;
 
@@ -330,21 +329,32 @@ body.grid-none {
     transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
 }
 
-/* Little round dot tail, like a comic bubble */
+/* little cloud tail – two dots */
+.speech-bubble::before,
 .speech-bubble::after {
     content: "";
     position: absolute;
-    left: 12px;          /* where the bubble points toward the circle */
-    top: 100%;
+    background: #ffffff;
+    border: 2px solid #4a76ff;
+    border-radius: 50%;
+}
+
+.speech-bubble::before {
     width: 10px;
     height: 10px;
-    background: #ffffff;
-    border-radius: 50%;
-    border: 2px solid #4a76ff;
-    border-top-color: transparent;
-    border-right-color: transparent;
-    transform: translateY(-3px) rotate(45deg);
+    left: 26px;
+    top: 100%;
+    transform: translateY(-2px);
 }
+
+.speech-bubble::after {
+    width: 7px;
+    height: 7px;
+    left: 18px;
+    top: 100%;
+    transform: translateY(6px);
+}
+
 
 /* Blue rounded video container */
 .intro-video {
@@ -390,6 +400,7 @@ body.grid-none {
     transform: translateY(0);
     pointer-events: auto;
 }
+
 
 
 
