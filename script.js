@@ -82,8 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const crackle      = document.getElementById("crackle");
     const trackTitleEl = document.getElementById("trackTitle");
 
-    if (bgMusic)  bgMusic.volume = 0.25; // music slightly reduced
-    if (crackle)  crackle.volume = 0.15; // subtle crackle
+    if (bgMusic)  bgMusic.volume = 0.20; // music slightly reduced
+    if (crackle)  crackle.volume = 0.20; // subtle crackle
 
     /* ======================
        JAZZ PLAYLIST for TURNTABLE
@@ -180,4 +180,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
 
