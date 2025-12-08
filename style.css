@@ -266,5 +266,38 @@ body.grid-none {
     pointer-events: none;
 }
 
+/* Floating animation for blobs */
+@keyframes blob-float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50%      { transform: translateY(-6px) scale(1.03); }
+}
+
+/* Apply floating */
+.tt-blob-back {
+    animation: blob-float 6s ease-in-out infinite;
+    animation-delay: 0.3s;
+}
+
+.tt-blob-front {
+    animation: blob-float 5s ease-in-out infinite;
+    animation-delay: 0.8s;
+}
+
+/* Hover attract effect */
+.turntable:hover .tt-blob {
+    filter: blur(1px) brightness(1.25);
+    transform: scale(1.08);
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+/* Light glow on hover */
+.turntable:hover .tt-blob-front {
+    box-shadow: 0 0 18px rgba(80,120,255,0.45);
+}
+
+.turntable:hover .tt-blob-back {
+    box-shadow: 0 0 14px rgba(135,182,255,0.35);
+}
+
 
 
