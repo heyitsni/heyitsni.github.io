@@ -9,64 +9,64 @@
 <body>
 
   <!-- Profile area (circle + bubble + intro video) -->
-<div class="profile-area">
-    <div class="profile-circle">
-        <img src="NI.jpeg" alt="Profile Image">
-    </div>
+  <div class="profile-area">
+      <div class="profile-circle">
+          <img src="NI.jpeg" alt="Profile Image">
+      </div>
 
-    <!-- Speech bubble -->
-    <div class="speech-bubble">
-        Hey, its Ni!
-    </div>
-<!-- Intro video box: local video + click → Insta -->
-<a href="https://www.instagram.com/reel/C6JluLTyofo/" 
-   target="_blank" 
-   class="intro-link">
-    <div class="intro-video">
-        <video id="introVideo" muted loop playsinline>
-            <source src="intro-video.mp4" type="video/mp4">
-        </video>
-    </div>
-</a>
+      <!-- Speech bubble -->
+      <div class="speech-bubble">
+          Hey, its Ni!
+      </div>
 
+      <!-- Intro video box: local video + click → Insta -->
+      <a href="https://www.instagram.com/reel/C6JluLTyofo/"
+         target="_blank"
+         class="intro-link">
+          <div class="intro-video">
+              <video id="introVideo" muted loop playsinline>
+                  <source src="intro-video.mp4" type="video/mp4">
+              </video>
+          </div>
+      </a>
+  </div> <!-- 🔁 CLOSE profile-area HERE -->
 
+  <!-- Grid toggle button -->
+  <button id="gridToggle" class="grid-btn">Grid: Square</button>
 
-    <!-- Grid toggle button -->
-    <button id="gridToggle" class="grid-btn">Grid: Square</button>
+  <!-- Turntable (top-right) -->
+  <div class="turntable" id="turntable">
+      <div class="tt-blob tt-blob-back"></div>
+      <div class="tt-blob tt-blob-front"></div>
 
-    <!-- Turntable (top-right) -->
-    <div class="turntable" id="turntable">
-        <div class="tt-blob tt-blob-back"></div>
-        <div class="tt-blob tt-blob-front"></div>
+      <div class="tt-record">
+          <div class="tt-label"></div>
+      </div>
 
-        <div class="tt-record">
-            <div class="tt-label"></div>
-        </div>
+      <div class="tt-arm"></div>
+  </div>
 
-        <div class="tt-arm"></div>
-    </div>
+  <!-- Track title display -->
+  <div class="track-title" id="trackTitle"></div>
 
-    <!-- Track title display -->
-    <div class="track-title" id="trackTitle"></div>
+  <!-- Custom AutoCAD-style cursor -->
+  <div class="custom-cursor">
+      <div class="cursor-center"></div>
+  </div>
 
-      <!-- Custom AutoCAD-style cursor -->
-    <div class="custom-cursor">
-        <div class="cursor-center"></div>
-    </div>
+  <!-- Playlist audio (src will be set by JS) -->
+  <audio id="bg-music" preload="auto"></audio>
 
-    <!-- Playlist audio (src will be set by JS) -->
-    <audio id="bg-music" preload="auto"></audio>
+  <!-- Vinyl crackle loop -->
+  <audio id="crackle" src="crackle.mp3" preload="auto" loop></audio>
 
-    <!-- Vinyl crackle loop -->
-    <audio id="crackle" src="crackle.mp3" preload="auto" loop></audio>
-    <!-- Intro overlay music (upload your own audio file) -->
-    
-<audio id="introMusic" src="intro-music.mp3" preload="auto" loop></audio>
+  <!-- Intro overlay music -->
+  <audio id="introMusic" src="intro-music.mp3" preload="auto" loop></audio>
 
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
