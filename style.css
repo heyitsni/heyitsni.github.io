@@ -323,10 +323,12 @@ body.grid-none {
     border: 2px solid #4a76ff;
     white-space: nowrap;
 
+    /* HIDDEN by default */
     opacity: 0;
+    visibility: hidden;
     transform: translateY(4px);
     pointer-events: none;
-    transition: opacity 0.22s ease, transform 0.22s ease;
+    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
 }
 
 /* Bubble tail */
@@ -342,6 +344,7 @@ body.grid-none {
     border-bottom: 2px solid #4a76ff;
     transform: rotate(45deg);
 }
+
 /* Blue rounded video placeholder */
 .intro-video {
     position: absolute;
@@ -358,11 +361,13 @@ body.grid-none {
     align-items: center;
     justify-content: center;
 
+    /* HIDDEN by default */
     opacity: 0;
+    visibility: hidden;
     transform: translateY(8px);
-    transition: opacity 0.24s ease, transform 0.24s ease;
+    pointer-events: none;
 
-    pointer-events: auto; /* so user can click the video */
+    transition: opacity 0.24s ease, transform 0.24s ease, visibility 0.24s ease;
 }
 
 /* Make the iframe fill the blue box */
@@ -371,11 +376,14 @@ body.grid-none {
     height: 100%;
     border: 0;
 }
+
 /* When hovering the profile area, reveal bubble + video */
 .profile-area:hover .speech-bubble,
 .profile-area:hover .intro-video {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
+    pointer-events: auto;
 }
 
 
