@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ======================
        GRID TOGGLE
     ====================== */
-
     let gridMode = 0; // 0 = square (default), 1 = dotted, 2 = off
     const btn = document.getElementById("gridToggle");
 
@@ -31,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ======================
        PROFILE IMAGE PARALLAX
     ====================== */
-
     const circle = document.querySelector(".profile-circle");
     const img = circle ? circle.querySelector("img") : null;
 
@@ -66,74 +64,69 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ======================
        AUTOCAD CROSSHAIR CURSOR
     ====================== */
-
     document.addEventListener("mousemove", (e) => {
         const root = document.documentElement;
         root.style.setProperty("--cursor-x", e.clientX + "px");
         root.style.setProperty("--cursor-y", e.clientY + "px");
     });
-/* ======================
-   INTRO VIDEO HOVER PLAY
-====================== */
 
-const profileArea = document.querySelector('.profile-area');
-const introVideo  = document.getElementById('introVideo');
-const introMusic  = document.getElementById('introMusic');
+    /* ======================
+       INTRO VIDEO HOVER PLAY
+    ====================== */
+    const profileArea = document.querySelector(".profile-area");
+    const introVideo  = document.getElementById("introVideo");
+    const introMusic  = document.getElementById("introMusic");
 
-// set music volume to 10%
-if (introMusic) {
-    introMusic.volume = 0.10;
-}
+    if (introMusic) {
+        introMusic.volume = 0.10; // 10% volume
+    }
 
-if (profileArea && introVideo && introMusic) {
-    profileArea.addEventListener('mouseenter', () => {
-        // restart both each time you hover
-        introVideo.currentTime = 0;
-        introMusic.currentTime = 0;
+    if (profileArea && introVideo && introMusic) {
+        profileArea.addEventListener("mouseenter", () => {
+            introVideo.currentTime = 0;
+            introMusic.currentTime = 0;
 
-        introVideo.play().catch(err => {
-            console.log('Intro video play failed:', err);
+            introVideo.play().catch(err => {
+                console.log("Intro video play failed:", err);
+            });
+
+            introMusic.play().catch(err => {
+                console.log("Intro music play failed:", err);
+            });
         });
 
-        introMusic.play().catch(err => {
-            console.log('Intro music play failed:', err);
+        profileArea.addEventListener("mouseleave", () => {
+            introVideo.pause();
+            introMusic.pause();
         });
-    });
-
-    profileArea.addEventListener('mouseleave', () => {
-        introVideo.pause();
-        introMusic.pause();
-    });
-}
+    }
 
     /* ======================
        AUDIO ELEMENTS & VOLUMES
     ====================== */
-
     const turntable    = document.getElementById("turntable");
     const bgMusic      = document.getElementById("bg-music");
     const crackle      = document.getElementById("crackle");
     const trackTitleEl = document.getElementById("trackTitle");
 
-    if (bgMusic)  bgMusic.volume = 0.20; // music slightly reduced
-    if (crackle)  crackle.volume = 0.20; // subtle crackle
+    if (bgMusic)  bgMusic.volume = 0.20;
+    if (crackle)  crackle.volume = 0.20;
 
     /* ======================
        JAZZ PLAYLIST for TURNTABLE
     ====================== */
-
     const playlist = [
-        { title: "A Jazz Piano",                         url: "a-jazz-piano-110481.mp3" },
-        { title: "Blues du Départ",                      url: "blues-du-depart-335178.mp3" },
-        { title: "Gimme Gimme Jazz",                     url: "gimme-gimme-jazz-179073.mp3" },
-        { title: "Guitar Blues",                         url: "guitar-blues-320298.mp3" },
-        { title: "Last Blues Before Sleeping",           url: "last-blues-before-sleeping-330428.mp3" },
-        { title: "Ogi – Feel The Beat (Jazz Expresso)",  url: "ogi-feel-the-beat-jazz-expresso-191266.mp3" },
-        { title: "Romantic Blues",                       url: "romantic-blues-286563.mp3" },
-        { title: "S_xy Blues Soul",                      url: "s_xy-blues-soul-286560.mp3" },
-        { title: "Slow Blues",                           url: "slow-blues-382029.mp3" },
-        { title: "That Jazz",                            url: "that-jazz-260655.mp3" },
-        { title: "The Best Jazz Club in New Orleans",    url: "the-best-jazz-club-in-new-orleans-164472.mp3" }
+        { title: "A Jazz Piano",                        url: "a-jazz-piano-110481.mp3" },
+        { title: "Blues du Départ",                     url: "blues-du-depart-335178.mp3" },
+        { title: "Gimme Gimme Jazz",                    url: "gimme-gimme-jazz-179073.mp3" },
+        { title: "Guitar Blues",                        url: "guitar-blues-320298.mp3" },
+        { title: "Last Blues Before Sleeping",          url: "last-blues-before-sleeping-330428.mp3" },
+        { title: "Ogi – Feel The Beat (Jazz Expresso)", url: "ogi-feel-the-beat-jazz-expresso-191266.mp3" },
+        { title: "Romantic Blues",                      url: "romantic-blues-286563.mp3" },
+        { title: "S_xy Blues Soul",                     url: "s_xy-blues-soul-286560.mp3" },
+        { title: "Slow Blues",                          url: "slow-blues-382029.mp3" },
+        { title: "That Jazz",                           url: "that-jazz-260655.mp3" },
+        { title: "The Best Jazz Club in New Orleans",   url: "the-best-jazz-club-in-new-orleans-164472.mp3" }
     ];
 
     let currentTrackIndex = 0;
@@ -181,7 +174,6 @@ if (profileArea && introVideo && introMusic) {
     /* ======================
        TURNTABLE CLICK CONTROL
     ====================== */
-
     if (turntable && bgMusic) {
         turntable.addEventListener("click", () => {
             console.log("Turntable clicked");
@@ -213,6 +205,3 @@ if (profileArea && introVideo && introMusic) {
         });
     }
 });
-
-
-
