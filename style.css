@@ -312,7 +312,7 @@ body.grid-none {
     opacity: 0;
     transform: translateY(6px);
     transition: opacity 0.25s ease, transform 0.25s ease;
-    z-index: 1;                 /* behind bubble, in front of grid */
+    z-index: 1;                 /* behind bubble */
 }
 
 .speech-lobe-left {
@@ -351,7 +351,7 @@ body.grid-none {
     top: 38px;
 }
 
-/* Hover: reveal bubble, lobes, and dots */
+/* Hover: reveal bubble, lobes, dots, and video */
 .profile-area:hover .speech-bubble,
 .profile-area:hover .speech-lobe,
 .profile-area:hover .speech-dot {
@@ -390,19 +390,10 @@ body.grid-none {
     object-fit: cover;
 }
 
-/* Hover: reveal bubble, dots, and video */
-.profile-area:hover .speech-bubble,
-.profile-area:hover .speech-dot-1,
-.profile-area:hover .speech-dot-2 {
-    opacity: 1;
-    transform: translateY(0);
-}
-
+/* Hover: reveal video as well */
 .profile-area:hover .intro-video {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
     pointer-events: auto;
 }
-
-
