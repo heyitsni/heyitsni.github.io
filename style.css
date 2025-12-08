@@ -294,7 +294,35 @@ body.grid-none {
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* Cloud lobes */
+/* --- CLOUD SPEECH BUBBLE (Georgia font) --- */
+.speech-bubble {
+    position: absolute;
+    left: 235px;          /* tweak these two numbers to move the cloud */
+    top: -40px;
+
+    padding: 14px 26px;
+    background: #ffffff;
+    color: #3F2AEE;
+    font-size: 15px;
+    font-family: Georgia, serif;
+
+    border: 3px solid #3F2AEE;
+    border-radius: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* extra “puffy” lobes to look like a cloud */
 .speech-bubble::before,
 .speech-bubble::after {
     content: "";
@@ -304,21 +332,23 @@ body.grid-none {
     border-radius: 50%;
 }
 
+/* top-left lobe */
 .speech-bubble::before {
-    width: 24px;
-    height: 24px;
-    left: -18px;
-    top: 10px;
+    width: 26px;
+    height: 26px;
+    left: 12px;
+    top: -20px;
 }
 
+/* top-right lobe */
 .speech-bubble::after {
-    width: 16px;
-    height: 16px;
-    left: -30px;
-    top: 28px;
+    width: 22px;
+    height: 22px;
+    right: 10px;
+    top: -16px;
 }
 
-/* Trail dots */
+/* little “trail” bubbles between head and cloud */
 .speech-dot-1,
 .speech-dot-2 {
     position: absolute;
@@ -328,19 +358,40 @@ body.grid-none {
     transition: opacity 0.25s ease;
 }
 
+/* first dot (bigger, closer to bubble) */
 .speech-dot-1 {
     width: 10px;
     height: 10px;
     left: 205px;
-    top: 18px;
+    top: 12px;
 }
 
+/* second dot (smaller, closer to head) */
 .speech-dot-2 {
-    width: 6px;
-    height: 6px;
-    left: 197px;
-    top: 32px;
+    width: 7px;
+    height: 7px;
+    left: 195px;
+    top: 28px;
 }
+
+/* Hover: reveal cloud + dots + video */
+.profile-area:hover .speech-bubble {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.profile-area:hover .speech-dot-1,
+.profile-area:hover .speech-dot-2 {
+    opacity: 1;
+}
+
+.profile-area:hover .intro-video {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
 
 /* --- VERTICAL REEL VIDEO BOX --- */
 .intro-link {
@@ -390,3 +441,4 @@ body.grid-none {
     transform: translateY(0);
     pointer-events: auto;
 }
+
