@@ -4,6 +4,72 @@ html, body {
     margin: 0;
     padding: 0;
 }
+/* Optional: local Lemon Tuesday font (rename file if needed) */
+@font-face {
+    font-family: "Lemon Tuesday";
+    src: url("LemonTuesday.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ===== HERO / LOGO AREA ===== */
+
+.hero {
+    width: 100%;
+    padding: 24px 16px 32px;
+    text-align: center;
+    position: relative;
+}
+
+.hero-logo {
+    height: 80px;              /* tweak size to taste */
+    margin-bottom: 8px;
+}
+
+/* container so the type text can sit just under the logo */
+.hero-tagline {
+    margin-top: 4px;
+}
+
+/* "hey, its Ni" base style */
+.typewriter {
+    position: relative;
+    display: inline-block;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    color: #305BAB;
+    white-space: nowrap;
+}
+
+/* blinking cursor while typing */
+.typewriter::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -4px;
+    width: 2px;
+    background: #305BAB;
+    opacity: 0;
+}
+
+.typewriter.typing::after {
+    opacity: 1;
+    animation: cursor-blink 0.8s steps(1) infinite;
+}
+
+@keyframes cursor-blink {
+    0%, 50% { opacity: 1; }
+    51%,100% { opacity: 0; }
+}
+
+/* "welcome to my world!" */
+.hero-welcome {
+    margin-top: 36px;
+    font-family: "Lemon Tuesday", "Brush Script MT", cursive;
+    font-size: 26px;
+    color: #2b6cd4;
+}
 
 /* DEFAULT — SQUARE GRID (base) */
 body {
@@ -370,6 +436,7 @@ body.grid-none {
     transform: translateY(0);
     pointer-events: auto;
 }
+
 
 
 
