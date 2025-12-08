@@ -204,7 +204,7 @@ body.grid-none {
     height: 32px;
     border-radius: 50%;
     background: #e54343;
-    box-shadow: 0 0 0 4px #caa27c;
+    box-shadow: 0 0 0 4px #3F2AEE;
 }
 
 /* Tone arm */
@@ -265,5 +265,6 @@ body.grid-none {
     line-height: 1.3;
     pointer-events: none;
 }
+
 
 
