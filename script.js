@@ -77,13 +77,13 @@ document.addEventListener("DOMContentLoaded", () => {
        AUDIO ELEMENTS & VOLUMES
     ====================== */
 
-    const turntable   = document.getElementById("turntable");
-    const bgMusic     = document.getElementById("bg-music");
-    const crackle     = document.getElementById("crackle");
+    const turntable    = document.getElementById("turntable");
+    const bgMusic      = document.getElementById("bg-music");
+    const crackle      = document.getElementById("crackle");
     const trackTitleEl = document.getElementById("trackTitle");
 
-    if (bgMusic)  bgMusic.volume  = 0.35; // main music
-    if (crackle)  crackle.volume  = 0.15; // subtle crackle
+    if (bgMusic)  bgMusic.volume = 0.35; // music slightly reduced
+    if (crackle)  crackle.volume = 0.15; // subtle crackle
 
     /* ======================
        JAZZ PLAYLIST for TURNTABLE
