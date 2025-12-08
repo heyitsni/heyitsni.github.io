@@ -18,18 +18,17 @@
     <div class="speech-bubble">
         Hey, its Ni!
     </div>
-
-    <!-- Intro video box -->
+<!-- Intro video box: local video + click → Insta -->
+<a href="https://www.instagram.com/reel/C6JluLTyofo/" 
+   target="_blank" 
+   class="intro-link">
     <div class="intro-video">
-        <!-- 🔴 Replace this iframe with your REAL Instagram embed -->
-        <iframe
-            src="https://www.instagram.com/reel/C6JluLTyofo/embed"
-            frameborder="0"
-            allowfullscreen
-            scrolling="no">
-        </iframe>
+        <video id="introVideo" muted loop playsinline>
+            <source src="intro-video.mp4" type="video/mp4">
+        </video>
     </div>
-</div>
+</a>
+
 
 
     <!-- Grid toggle button -->
@@ -64,6 +63,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
