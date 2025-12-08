@@ -350,7 +350,6 @@ body.grid-none {
     position: absolute;
     border-radius: 50%;
     background: #3F2AEE;
-
     opacity: 0;
     transition: opacity 0.25s ease;
 }
@@ -371,7 +370,38 @@ body.grid-none {
     top: 36px;
 }
 
-/* Reveal when hovering the profile area */
+/* --- VERTICAL REEL VIDEO BOX --- */
+.intro-link {
+    text-decoration: none;
+}
+
+.intro-video {
+    position: absolute;
+    left: 220px;
+    top: 70px;
+    width: 160px;
+    height: calc(160px * 1.777); /* 9:16 */
+    background: #2b6cd4;
+    border-radius: 24px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: auto;
+}
+
+.intro-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hover: reveal bubble, dots, and video */
 .profile-area:hover .speech-bubble,
 .profile-area:hover .speech-dot-1,
 .profile-area:hover .speech-dot-2 {
@@ -379,13 +409,13 @@ body.grid-none {
     transform: translateY(0);
 }
 
-
 .profile-area:hover .intro-video {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
     pointer-events: auto;
 }
+
 
 
 /* --- VERTICAL REEL VIDEO BOX --- */
@@ -436,5 +466,6 @@ body.grid-none {
     transform: translateY(0);
     pointer-events: auto;
 }
+
 
 
