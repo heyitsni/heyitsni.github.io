@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.remove("grid-dotted", "grid-none");
 
         if (gridMode === 0) {
-            // default square grid: base <body> style
             if (btn) btn.textContent = "Grid: Square";
         } else if (gridMode === 1) {
             document.body.classList.add("grid-dotted");
@@ -26,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
             gridMode = (gridMode + 1) % 3;
             updateGrid();
         });
-        // initial state
         updateGrid();
     }
 
@@ -76,64 +74,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* ======================
+       AUDIO ELEMENTS & VOLUMES
+    ====================== */
+
+    const turntable   = document.getElementById("turntable");
+    const bgMusic     = document.getElementById("bg-music");
+    const crackle     = document.getElementById("crackle");
+    const trackTitleEl = document.getElementById("trackTitle");
+
+    if (bgMusic)  bgMusic.volume  = 0.35; // main music
+    if (crackle)  crackle.volume  = 0.15; // subtle crackle
+
+    /* ======================
        JAZZ PLAYLIST for TURNTABLE
     ====================== */
-const crackle = document.getElementById("crackle");
-if (crackle) crackle.volume = 0.15;
 
     const playlist = [
-    {
-        title: "A Jazz Piano",
-        url: "a-jazz-piano-110481.mp3"      // make sure filename matches your file
-    },
-    {
-        title: "Blues du Départ",
-        url: "blues-du-depart-335178.mp3"
-    },
-    {
-        title: "Gimme Gimme Jazz",
-        url: "gimme-gimme-jazz-179073.mp3"
-    },
-    {
-        title: "Guitar Blues",
-        url: "guitar-blues-320298.mp3"
-    },
-    {
-        title: "Last Blues Before Sleeping",
-        url: "last-blues-before-sleeping-330428.mp3"
-    },
-    {
-        title: "Ogi – Feel The Beat (Jazz Expresso)",
-        url: "ogi-feel-the-beat-jazz-expresso-191266.mp3"
-    },
-    {
-        title: "Romantic Blues",
-        url: "romantic-blues-286563.mp3"
-    },
-    {
-        title: "S_xy Blues Soul",
-        url: "s_xy-blues-soul-286560.mp3"
-    },
-    {
-        title: "Slow Blues",
-        url: "slow-blues-382029.mp3"
-    },
-    {
-        title: "That Jazz",
-        url: "that-jazz-260655.mp3"
-    },
-    {
-        title: "The Best Jazz Club in New Orleans",
-        url: "the-best-jazz-club-in-new-orleans-164472.mp3"
-    }
-];
-
+        { title: "A Jazz Piano",                         url: "a-jazz-piano-110481.mp3" },
+        { title: "Blues du Départ",                      url: "blues-du-depart-335178.mp3" },
+        { title: "Gimme Gimme Jazz",                     url: "gimme-gimme-jazz-179073.mp3" },
+        { title: "Guitar Blues",                         url: "guitar-blues-320298.mp3" },
+        { title: "Last Blues Before Sleeping",           url: "last-blues-before-sleeping-330428.mp3" },
+        { title: "Ogi – Feel The Beat (Jazz Expresso)",  url: "ogi-feel-the-beat-jazz-expresso-191266.mp3" },
+        { title: "Romantic Blues",                       url: "romantic-blues-286563.mp3" },
+        { title: "S_xy Blues Soul",                      url: "s_xy-blues-soul-286560.mp3" },
+        { title: "Slow Blues",                           url: "slow-blues-382029.mp3" },
+        { title: "That Jazz",                            url: "that-jazz-260655.mp3" },
+        { title: "The Best Jazz Club in New Orleans",    url: "the-best-jazz-club-in-new-orleans-164472.mp3" }
+    ];
 
     let currentTrackIndex = 0;
-
-    const turntable = document.getElementById("turntable");
-    const bgMusic = document.getElementById("bg-music");
-    const trackTitleEl = document.getElementById("trackTitle");
     let isMusicPlaying = false;
 
     function loadTrack(index) {
@@ -152,18 +122,14 @@ if (crackle) crackle.volume = 0.15;
 
     function nextTrack(autoPlay = true) {
         if (!bgMusic) return;
+
         const nextIndex = (currentTrackIndex + 1) % playlist.length;
         loadTrack(nextIndex);
 
         if (autoPlay) {
-            bgMusic
-                .play()
-                .then(() => {
-                    // track playing
-                })
-                .catch((err) => {
-                    console.log("Autoplay blocked on next track:", err);
-                });
+            bgMusic.play().catch((err) => {
+                console.log("Autoplay blocked on next track:", err);
+            });
         }
     }
 
@@ -173,13 +139,11 @@ if (crackle) crackle.volume = 0.15;
         bgMusic.addEventListener("ended", () => {
             nextTrack(true);
         });
-    }
-    bgMusic.addEventListener("error", () => {
-    console.log("AUDIO ERROR:", bgMusic.error);
-});
 
-const bgMusic = document.getElementById("bg-music");
-bgMusic.volume = 0.35;   // 35% volume – adjust to taste
+        bgMusic.addEventListener("error", () => {
+            console.log("AUDIO ERROR:", bgMusic.error);
+        });
+    }
 
     /* ======================
        TURNTABLE CLICK CONTROL
@@ -189,28 +153,30 @@ bgMusic.volume = 0.35;   // 35% volume – adjust to taste
         turntable.addEventListener("click", () => {
             console.log("Turntable clicked");
 
-            // ensure a track is loaded
             if (!bgMusic.src) {
                 loadTrack(currentTrackIndex);
             }
 
-            // toggle state
             isMusicPlaying = !isMusicPlaying;
 
             if (isMusicPlaying) {
                 turntable.classList.add("playing");
+
                 bgMusic.play().catch((err) => {
                     console.log("Audio play failed:", err);
                 });
+
+                if (crackle) {
+                    crackle.currentTime = 0;
+                    crackle.play().catch((err) => {
+                        console.log("Crackle play failed:", err);
+                    });
+                }
             } else {
                 turntable.classList.remove("playing");
                 bgMusic.pause();
+                if (crackle) crackle.pause();
             }
         });
     }
 });
-
-
-
-
-
