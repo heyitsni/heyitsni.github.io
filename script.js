@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const crackle      = document.getElementById("crackle");
     const trackTitleEl = document.getElementById("trackTitle");
 
-    if (bgMusic)  bgMusic.volume = 0.35; // music slightly reduced
+    if (bgMusic)  bgMusic.volume = 0.25; // music slightly reduced
     if (crackle)  crackle.volume = 0.15; // subtle crackle
 
     /* ======================
@@ -180,3 +180,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
