@@ -356,11 +356,11 @@ body.grid-none {
 }
 
 
-/* Blue rounded video container – smaller */
+/* Blue rounded video container – smaller card */
 .intro-video {
     position: absolute;
-    left: 230px;        /* a bit further right */
-    top: 20px;          /* slightly above previous */
+    left: 230px;
+    top: 20px;
     width: 220px;
     height: 300px;
     background: #2b6cd4;
@@ -382,14 +382,19 @@ body.grid-none {
     transition: opacity 0.24s ease, transform 0.24s ease, visibility 0.24s ease;
 }
 
-/* crop the Instagram card so it feels video-first */
-.intro-video iframe {
-    width: 120%;
-    height: 120%;
-    border: 0;
+/* Make the local video fill the box */
+.intro-video video {
+    width: 100%;
+    height: 100%;
     border-radius: 18px;
-    transform: translate(-10%, -6%);
+    object-fit: cover;
 }
+
+/* make sure link has no underline */
+.intro-link {
+    text-decoration: none;
+}
+
 
 
 /* When hovering the profile area, reveal bubble + video */
@@ -400,6 +405,7 @@ body.grid-none {
     transform: translateY(0);
     pointer-events: auto;
 }
+
 
 
 
