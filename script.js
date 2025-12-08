@@ -72,6 +72,39 @@ document.addEventListener("DOMContentLoaded", () => {
         root.style.setProperty("--cursor-x", e.clientX + "px");
         root.style.setProperty("--cursor-y", e.clientY + "px");
     });
+/* ======================
+   INTRO VIDEO HOVER PLAY
+====================== */
+
+const profileArea = document.querySelector('.profile-area');
+const introVideo  = document.getElementById('introVideo');
+const introMusic  = document.getElementById('introMusic');
+
+// set music volume to 10%
+if (introMusic) {
+    introMusic.volume = 0.10;
+}
+
+if (profileArea && introVideo && introMusic) {
+    profileArea.addEventListener('mouseenter', () => {
+        // restart both each time you hover
+        introVideo.currentTime = 0;
+        introMusic.currentTime = 0;
+
+        introVideo.play().catch(err => {
+            console.log('Intro video play failed:', err);
+        });
+
+        introMusic.play().catch(err => {
+            console.log('Intro music play failed:', err);
+        });
+    });
+
+    profileArea.addEventListener('mouseleave', () => {
+        introVideo.pause();
+        introMusic.pause();
+    });
+}
 
     /* ======================
        AUDIO ELEMENTS & VOLUMES
@@ -180,5 +213,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
 
 
