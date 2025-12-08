@@ -340,7 +340,7 @@ body.grid-none {
 .intro-video {
     position: absolute;
     left: 220px;
-    top: 70px;
+    top: 50px;
     width: 160px;
     height: calc(160px * 1.777); /* 9:16 */
     background: #2b6cd4;
@@ -370,4 +370,5 @@ body.grid-none {
     transform: translateY(0);
     pointer-events: auto;
 }
+
 
