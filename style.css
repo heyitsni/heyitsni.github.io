@@ -365,8 +365,8 @@ body.grid-none {
     left: 220px;
     top: 70px;
 
-    width: 160px;              /* smaller */
-    height: calc(160px * 1.777); /* 9:16 ratio */
+    width: 160px;
+    height: calc(160px * 1.777); /* 9:16 */
 
     background: #2b6cd4;
     border-radius: 24px;
@@ -379,11 +379,13 @@ body.grid-none {
     justify-content: center;
 
     opacity: 0;
+    visibility: hidden;          /* 👈 add this */
     transform: translateY(8px);
     transition: opacity 0.25s ease, transform 0.25s ease;
 
     pointer-events: auto;
 }
+
 
 /* Make video fit perfectly */
 .intro-video video {
@@ -401,6 +403,7 @@ body.grid-none {
     transform: translateY(0);
     pointer-events: auto;
 }
+
 
 
 
