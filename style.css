@@ -244,6 +244,7 @@ body.grid-none {
     pointer-events: none;
 }
 
+/* subtle floating for blobs */
 @keyframes blob-float {
     0%, 100% { transform: translateY(0) scale(1); }
     50%      { transform: translateY(-6px) scale(1.03); }
