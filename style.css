@@ -356,24 +356,24 @@ body.grid-none {
 }
 
 
-/* Blue rounded video container */
+/* Blue rounded video container – smaller */
 .intro-video {
     position: absolute;
-    left: 220px;      /* aligned under the bubble */
-    top: 50px;        /* a bit lower than before */
-    width: 280px;     /* wider to fit full IG card */
-    height: 380px;    /* tall enough so "View profile" + video fit */
+    left: 230px;        /* a bit further right */
+    top: 20px;          /* slightly above previous */
+    width: 220px;
+    height: 300px;
     background: #2b6cd4;
     border-radius: 24px;
-    box-shadow: 0 10px 22px rgba(0,0,0,0.18);
-    padding: 10px;    /* so you see some blue around the card */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+    padding: 8px;
     overflow: hidden;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    /* HIDDEN by default */
+    /* hidden by default */
     opacity: 0;
     visibility: hidden;
     transform: translateY(8px);
@@ -382,13 +382,13 @@ body.grid-none {
     transition: opacity 0.24s ease, transform 0.24s ease, visibility 0.24s ease;
 }
 
-/* Make the Instagram embed fill the box and crop a bit of the header */
+/* crop the Instagram card so it feels video-first */
 .intro-video iframe {
-    width: 115%;
-    height: 115%;
+    width: 120%;
+    height: 120%;
     border: 0;
     border-radius: 18px;
-    transform: translateY(-8%) translateX(-7%);
+    transform: translate(-10%, -6%);
 }
 
 
@@ -400,6 +400,7 @@ body.grid-none {
     transform: translateY(0);
     pointer-events: auto;
 }
+
 
 
 
