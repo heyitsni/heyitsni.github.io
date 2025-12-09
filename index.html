@@ -10,7 +10,7 @@
 
 <!-- ===== MAIN CANVAS ===== -->
 <div class="page-frame">
-
+  
   <!-- ========== HERO / LOGO AREA ========== -->
   <header class="hero">
     <!-- 1. Logo PNG -->
@@ -27,8 +27,10 @@
     </div>
   </header>
 
-  <!-- ===== PROFILE AREA ===== -->
-  <div class="profile-row">
+  <!-- ===== FRAMED GRID SHEET ===== -->
+  <div class="sheet">
+
+    <!-- PROFILE + INTRO VIDEO (left side) -->
     <div class="profile-area">
       <div class="profile-circle">
         <img src="NI.jpeg" alt="Profile Image">
@@ -43,39 +45,37 @@
       <a href="https://www.instagram.com/reel/C6JluLTyofo/"
          target="_blank"
          class="intro-link">
-          <div class="intro-video">
-              <video id="introVideo" muted loop playsinline>
-                  <source src="intro-video.mp4" type="video/mp4">
-              </video>
-          </div>
+        <div class="intro-video">
+          <video id="introVideo" muted loop playsinline>
+            <source src="intro-video.mp4" type="video/mp4">
+          </video>
+        </div>
       </a>
     </div>
 
-    <!-- Right side is empty for now; grid will show behind -->
-    <div class="profile-right-spacer"></div>
-  </div>
+    <!-- TURNTABLE (right inside sheet) -->
+    <div class="turntable" id="turntable">
+      <div class="tt-blob tt-blob-back"></div>
+      <div class="tt-blob tt-blob-front"></div>
+      <div class="tt-record">
+        <div class="tt-label"></div>
+      </div>
+      <div class="tt-arm"></div>
+    </div>
+
+    <!-- Track title display (under turntable) -->
+    <div class="track-title" id="trackTitle"></div>
+
+  </div> <!-- /sheet -->
 
 </div> <!-- /page-frame -->
 
 <!-- Grid toggle button -->
 <button id="gridToggle" class="grid-btn">Grid: Square</button>
 
-<!-- Turntable (top-right) -->
-<div class="turntable" id="turntable">
-    <div class="tt-blob tt-blob-back"></div>
-    <div class="tt-blob tt-blob-front"></div>
-    <div class="tt-record">
-        <div class="tt-label"></div>
-    </div>
-    <div class="tt-arm"></div>
-</div>
-
-<!-- Track title display -->
-<div class="track-title" id="trackTitle"></div>
-
 <!-- Custom AutoCAD-style cursor -->
 <div class="custom-cursor">
-    <div class="cursor-center"></div>
+  <div class="cursor-center"></div>
 </div>
 
 <!-- Playlist audio (src will be set by JS) -->
