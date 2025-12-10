@@ -43,7 +43,7 @@ body.grid-none {
   font-style: normal;
 }
 
-/* Container just to keep content centered horizontally */
+/* Container to keep hero centered horizontally */
 .page-frame {
   max-width: 1400px;
   margin: 0 auto;
@@ -59,16 +59,12 @@ body.grid-none {
   position: relative;
 }
 
-.hero-logo {
-  height: 80px;
-  margin-bottom: 4px;
-}
-
+/* "hey, its!" above the logo */
 .hero-tagline {
-  margin-top: 2px;
+  margin-bottom: 6px;
 }
 
-/* "hey, its Ni" base style */
+/* animated text */
 .typewriter {
   position: relative;
   display: inline-block;
@@ -76,10 +72,11 @@ body.grid-none {
   font-size: 18px;
   color: #305bab;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 /* blinking cursor while typing */
-.typewriter::after {
+.typewriter.typing::after {
   content: "";
   position: absolute;
   top: 0;
@@ -87,11 +84,6 @@ body.grid-none {
   right: -4px;
   width: 2px;
   background: #305bab;
-  opacity: 0;
-}
-
-.typewriter.typing::after {
-  opacity: 1;
   animation: cursor-blink 0.8s steps(1) infinite;
 }
 
@@ -100,31 +92,26 @@ body.grid-none {
   51%,100% { opacity: 0; }
 }
 
+.hero-logo {
+  height: 80px;
+  margin-bottom: 4px;
+}
+
 /* "welcome to my world!" */
 .hero-welcome {
-  margin-top: 10px;
+  margin-top: 4px;
   font-family: "Lemon Tuesday", "Brush Script MT", cursive;
   font-size: 24px;
   color: #2b6cd4;
 }
 
-/* ===== PROFILE ROW ===== */
-.profile-row {
-  display: flex;
-  align-items: flex-start;
-  margin-top: 40px;        /* gap under hero */
-}
-
-/* empty right side for now */
-.profile-right-spacer {
-  flex: 1;
-}
-
-/* ============= PROFILE CIRCLE ============= */
+/* ============= PROFILE CIRCLE – TOP LEFT ============= */
 .profile-area {
-  position: relative;
+  position: fixed;
+  top: 140px;   /* adjust if you want it higher/lower */
+  left: 80px;   /* distance from left edge */
   display: inline-block;
-  margin-left: 60px;       /* push in from very left edge */
+  z-index: 100;
 }
 
 .profile-circle {
