@@ -8,18 +8,20 @@
 </head>
 <body>
 
-<!-- ===== MAIN CANVAS ===== -->
+<!-- ===== MAIN CANVAS WRAPPER ===== -->
 <div class="page-frame">
   
   <!-- ========== HERO / LOGO AREA ========== -->
   <header class="hero">
-    <!-- 1. Logo PNG -->
-    <img src="logo.png" alt="logo" class="hero-logo">
-
-    <!-- 2. "hey, its Ni" – hover typewriter -->
+    <!-- 1. "hey, its!" – hover typewriter ABOVE logo -->
     <div class="hero-tagline">
-      <span id="heyItsNi" class="typewriter">hey, its Ni</span>
+      <span id="heyItsNi"
+            class="typewriter"
+            data-text="hey, its!">hey, its!</span>
     </div>
+
+    <!-- 2. Logo PNG -->
+    <img src="logo.png" alt="logo" class="hero-logo">
 
     <!-- 3. "welcome to my world!" – Lemon Tuesday font -->
     <div class="hero-welcome">
@@ -27,48 +29,43 @@
     </div>
   </header>
 
-  <!-- ===== FRAMED GRID SHEET ===== -->
-  <div class="sheet">
-
-    <!-- PROFILE + INTRO VIDEO (left side) -->
-    <div class="profile-area">
-      <div class="profile-circle">
-        <img src="NI.jpeg" alt="Profile Image">
-      </div>
-
-      <!-- Speech bubble -->
-      <div class="speech-bubble">Hey, its Ni!</div>
-      <div class="speech-dot speech-dot-1"></div>
-      <div class="speech-dot speech-dot-2"></div>
-
-      <!-- Intro video box: local video + click → Insta -->
-      <a href="https://www.instagram.com/reel/C6JluLTyofo/"
-         target="_blank"
-         class="intro-link">
-        <div class="intro-video">
-          <video id="introVideo" muted loop playsinline>
-            <source src="intro-video.mp4" type="video/mp4">
-          </video>
-        </div>
-      </a>
-    </div>
-
-    <!-- TURNTABLE (right inside sheet) -->
-    <div class="turntable" id="turntable">
-      <div class="tt-blob tt-blob-back"></div>
-      <div class="tt-blob tt-blob-front"></div>
-      <div class="tt-record">
-        <div class="tt-label"></div>
-      </div>
-      <div class="tt-arm"></div>
-    </div>
-
-    <!-- Track title display (under turntable) -->
-    <div class="track-title" id="trackTitle"></div>
-
-  </div> <!-- /sheet -->
-
 </div> <!-- /page-frame -->
+
+<!-- ===== PROFILE CIRCLE – TOP LEFT ===== -->
+<div class="profile-area">
+  <div class="profile-circle">
+    <img src="NI.jpeg" alt="Profile Image">
+  </div>
+
+  <!-- Speech bubble -->
+  <div class="speech-bubble">Hey, its Ni!</div>
+  <div class="speech-dot speech-dot-1"></div>
+  <div class="speech-dot speech-dot-2"></div>
+
+  <!-- Intro video box: local video + click → Insta -->
+  <a href="https://www.instagram.com/reel/C6JluLTyofo/"
+     target="_blank"
+     class="intro-link">
+    <div class="intro-video">
+      <video id="introVideo" muted loop playsinline>
+        <source src="intro-video.mp4" type="video/mp4">
+      </video>
+    </div>
+  </a>
+</div>
+
+<!-- Turntable (top-right, fixed) -->
+<div class="turntable" id="turntable">
+    <div class="tt-blob tt-blob-back"></div>
+    <div class="tt-blob tt-blob-front"></div>
+    <div class="tt-record">
+        <div class="tt-label"></div>
+    </div>
+    <div class="tt-arm"></div>
+</div>
+
+<!-- Track title display -->
+<div class="track-title" id="trackTitle"></div>
 
 <!-- Grid toggle button -->
 <button id="gridToggle" class="grid-btn">Grid: Square</button>
