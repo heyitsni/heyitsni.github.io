@@ -59,9 +59,9 @@ body.grid-none {
   position: relative;
 }
 
-/* "hey, its!" above the logo */
+/* "hey, its" above the logo */
 .hero-tagline {
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 /* animated text */
@@ -108,7 +108,7 @@ body.grid-none {
 /* ============= PROFILE CIRCLE – TOP LEFT ============= */
 .profile-area {
   position: fixed;
-  top: 70px;   /* adjust if you want it higher/lower */
+  top: 60px;   /* adjust if you want it higher/lower */
   left: 50px;   /* distance from left edge */
   display: inline-block;
   z-index: 100;
@@ -417,4 +417,5 @@ body.grid-none {
   line-height: 1.3;
   pointer-events: none;
 }
+
 
