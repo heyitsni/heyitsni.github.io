@@ -62,7 +62,7 @@ body.grid-none {
 .hero-tagline {
   position: absolute;
   top: 30px;                   /* distance from top of hero */
-  left: 55%;                   /* move horizontally across the logo */
+  left: 53%;                   /* move horizontally across the logo */
   transform: translateX(-50%); /* keep text anchored nicely */
 }
 
@@ -410,8 +410,7 @@ body.grid-none {
   top: 210px;
   right: 40px;
   font-size: 11px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    sans-serif;
+  font-family: Georgia, "Times New Roman", serif;
   color: #305bab;
   opacity: 0.8;
   max-width: 160px;
@@ -455,6 +454,7 @@ body.grid-none {
   transform: scale(1.15);
   opacity: 1;
 }
+
 
 
 
