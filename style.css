@@ -35,12 +35,16 @@ body.grid-none {
   background-image: none;
 }
 
-/* Optional: local Lemon Tuesday font */
+/* ========= CUSTOM FONTS ========= */
+
+/* Handwritten script – Lemon Tuesday (make sure LemonTuesday.woff2 is
+   in the same folder as style.css) */
 @font-face {
   font-family: "Lemon Tuesday";
-  src: url("LemonTuesday.woff2") format("woff2");
-  font-weight: normal;
+  src: url("./LemonTuesday.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 /* Container to keep hero centered horizontally */
@@ -66,7 +70,7 @@ body.grid-none {
   transform: translateX(-50%); /* keep text anchored nicely */
 }
 
-/* animated text */
+/* animated text – GEORGIA */
 .typewriter {
   position: relative;
   display: inline-block;
@@ -99,11 +103,13 @@ body.grid-none {
   margin-bottom: 4px;
 }
 
-/* "welcome to my world!" */
+/* "welcome to my world!" – LEMON TUESDAY */
 .hero-welcome {
   margin-top: 65px;
   font-family: "Lemon Tuesday", "Brush Script MT", cursive;
-  font-size: 24px;
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
   color: #2b6cd4;
 }
 
@@ -111,7 +117,7 @@ body.grid-none {
 .profile-area {
   position: fixed;
   top: 40px;   /* adjust if you want it higher/lower */
-  left: 50px;   /* distance from left edge */
+  left: 50px;  /* distance from left edge */
   display: inline-block;
   z-index: 100;
 }
@@ -404,7 +410,7 @@ body.grid-none {
   50%      { transform: rotate(12deg); }
 }
 
-/* Track title */
+/* Track title – GEORGIA */
 .track-title {
   position: fixed;
   top: 210px;
@@ -454,20 +460,3 @@ body.grid-none {
   transform: scale(1.15);
   opacity: 1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
