@@ -100,12 +100,17 @@ body.grid-none {
   height: 80px;
   margin-bottom: 4px;
 }
+/* ✅ Hover zone: lets hover over logo OR "hey, its" to trigger typing */
+.logo-hover-area {
+  display: inline-block;
+  position: relative;
+}
 
 /* "welcome to my world!" – Lemon Tuesday */
 .hero-welcome {
   margin-top: 85px;
   font-family: "Lemon Tuesday", "Brush Script MT", cursive;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.1;
   letter-spacing: 0.02em;
   color: #2b6cd4;
@@ -438,6 +443,7 @@ body.grid-none {
 .icon-credit a:hover {
   opacity: 1;
 }
+
 
 
 
