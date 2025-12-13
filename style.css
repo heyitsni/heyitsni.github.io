@@ -9,17 +9,15 @@ body {
 /* Full-page grid background (default) */
 body {
   background-image:
-    /* light grid lines */
     linear-gradient(to right, rgba(0, 120, 255, 0.15) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 120, 255, 0.15) 1px, transparent 1px),
-    /* bold grid every 5 cells */
     linear-gradient(to right, rgba(0, 120, 255, 0.3) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 120, 255, 0.3) 1px, transparent 1px);
   background-size:
     20px 20px, 20px 20px,
     100px 100px, 100px 100px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    sans-serif;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
   transition: background 0.3s ease;
 }
 
@@ -36,9 +34,6 @@ body.grid-none {
 }
 
 /* ========= CUSTOM FONTS ========= */
-
-/* Handwritten script – Lemon Tuesday (make sure LemonTuesday.woff2 is
-   in the same folder as style.css) */
 @font-face {
   font-family: "Lemon Tuesday";
   src: url("./LemonTuesday.woff2") format("woff2");
@@ -60,17 +55,18 @@ body.grid-none {
   text-align: center;
   padding-top: 50px;
   padding-bottom: 8px;
-  position: relative;          /* important for absolute children */
+  position: relative; /* needed for absolute tagline positioning */
 }
 
+/* Move "hey, its" by editing top/left here */
 .hero-tagline {
   position: absolute;
-  top: 60px;                   /* distance from top of hero */
-  left: 51%;                   /* move horizontally across the logo */
-  transform: translateX(-50%); /* keep text anchored nicely */
+  top: 60px;
+  left: 51%;
+  transform: translateX(-50%);
 }
 
-/* animated text – GEORGIA */
+/* "hey, its" – Georgia */
 .typewriter {
   position: relative;
   display: inline-block;
@@ -81,7 +77,7 @@ body.grid-none {
   cursor: pointer;
 }
 
-/* blinking cursor while typing */
+/* cursor only while typing */
 .typewriter.typing::after {
   content: "";
   position: absolute;
@@ -95,7 +91,7 @@ body.grid-none {
 
 @keyframes cursor-blink {
   0%, 50% { opacity: 1; }
-  51%,100% { opacity: 0; }
+  51%, 100% { opacity: 0; }
 }
 
 .hero-logo {
@@ -103,7 +99,7 @@ body.grid-none {
   margin-bottom: 4px;
 }
 
-/* "welcome to my world!" – LEMON TUESDAY */
+/* "welcome to my world!" – Lemon Tuesday */
 .hero-welcome {
   margin-top: 85px;
   font-family: "Lemon Tuesday", "Brush Script MT", cursive;
@@ -116,8 +112,8 @@ body.grid-none {
 /* ============= PROFILE CIRCLE – TOP LEFT ============= */
 .profile-area {
   position: fixed;
-  top: 40px;   /* adjust if you want it higher/lower */
-  left: 50px;  /* distance from left edge */
+  top: 40px;
+  left: 50px;
   display: inline-block;
   z-index: 100;
 }
@@ -191,7 +187,6 @@ body.grid-none {
   top: 38px;
 }
 
-/* Hover: reveal bubble + dots */
 .profile-area:hover .speech-bubble,
 .profile-area:hover .speech-dot {
   opacity: 1;
@@ -216,6 +211,7 @@ body.grid-none {
   display: flex;
   align-items: center;
   justify-content: center;
+
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);
@@ -229,7 +225,6 @@ body.grid-none {
   object-fit: cover;
 }
 
-/* Hover: reveal video as well */
 .profile-area:hover .intro-video {
   opacity: 1;
   visibility: visible;
@@ -250,9 +245,7 @@ body.grid-none {
   cursor: pointer;
   font-weight: 400;
   z-index: 9999;
-  transition: transform 0.18s ease,
-              box-shadow 0.25s ease,
-              background 0.25s ease;
+  transition: transform 0.18s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .grid-btn:hover {
@@ -279,7 +272,6 @@ body.grid-none {
   pointer-events: none;
 }
 
-/* Horizontal line */
 .custom-cursor::before {
   content: "";
   position: absolute;
@@ -290,7 +282,6 @@ body.grid-none {
   top: var(--cursor-y);
 }
 
-/* Vertical line */
 .custom-cursor::after {
   content: "";
   position: absolute;
@@ -301,7 +292,6 @@ body.grid-none {
   left: var(--cursor-x);
 }
 
-/* Small square handle */
 .cursor-center {
   position: absolute;
   width: 12px;
@@ -402,15 +392,15 @@ body.grid-none {
 
 @keyframes tt-spin {
   from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  to { transform: rotate(360deg); }
 }
 
 @keyframes tt-arm-swing {
   0%, 100% { transform: rotate(20deg); }
-  50%      { transform: rotate(12deg); }
+  50% { transform: rotate(12deg); }
 }
 
-/* Track title – GEORGIA */
+/* Track title – Georgia */
 .track-title {
   position: fixed;
   top: 210px;
@@ -425,10 +415,7 @@ body.grid-none {
   pointer-events: none;
 }
 
-/* ======================================
-   FOOTER TAGLINE + SOCIAL ICONS
-====================================== */
-
+/* ===== FOOTER TAGLINE + SOCIAL ICONS ===== */
 .footer-area {
   width: 100%;
   text-align: center;
@@ -461,4 +448,23 @@ body.grid-none {
   opacity: 1;
 }
 
+/* ===== ICON CREDIT ===== */
+.icon-credit {
+  display: block;
+  font-size: 11px;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #6a84c8;
+  opacity: 0.65;
+  margin-top: 10px;
+  text-align: center;
+}
 
+.icon-credit a {
+  color: #6a84c8;
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+}
+
+.icon-credit a:hover {
+  opacity: 1;
+}
