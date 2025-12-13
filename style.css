@@ -407,8 +407,8 @@ body.grid-none {
 }
 
 .social-icon img {
-  width: 32px;
-  height: 32px;
+  width: 15px;
+  height: 15px;
   opacity: 0.9;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
@@ -438,4 +438,5 @@ body.grid-none {
 .icon-credit a:hover {
   opacity: 1;
 }
+
 
