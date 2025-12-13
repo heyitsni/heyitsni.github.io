@@ -105,7 +105,7 @@ body.grid-none {
 .hero-welcome {
   margin-top: 85px;
   font-family: "Lemon Tuesday", "Brush Script MT", cursive;
-  font-size: 28px;
+  font-size: 16px;
   line-height: 1.1;
   letter-spacing: 0.02em;
   color: #2b6cd4;
@@ -438,6 +438,7 @@ body.grid-none {
 .icon-credit a:hover {
   opacity: 1;
 }
+
 
 
 
