@@ -58,7 +58,7 @@ body.grid-none {
 .hero {
   width: 100%;
   text-align: center;
-  padding-top: 25px;
+  padding-top: 50px;
   padding-bottom: 8px;
   position: relative;          /* important for absolute children */
 }
@@ -66,7 +66,7 @@ body.grid-none {
 .hero-tagline {
   position: absolute;
   top: 30px;                   /* distance from top of hero */
-  left: 53%;                   /* move horizontally across the logo */
+  left: 50%;                   /* move horizontally across the logo */
   transform: translateX(-50%); /* keep text anchored nicely */
 }
 
@@ -105,7 +105,7 @@ body.grid-none {
 
 /* "welcome to my world!" – LEMON TUESDAY */
 .hero-welcome {
-  margin-top: 65px;
+  margin-top: 85px;
   font-family: "Lemon Tuesday", "Brush Script MT", cursive;
   font-size: 28px;
   line-height: 1.1;
@@ -460,3 +460,4 @@ body.grid-none {
   transform: scale(1.15);
   opacity: 1;
 }
+
