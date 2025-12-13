@@ -64,7 +64,7 @@ body.grid-none {
 .hero-tagline {
   position: absolute;
   top: 60px;
-  left: 52%;
+  left: 51.5%;
   transform: translateX(-50%);
 }
 
@@ -438,6 +438,7 @@ body.grid-none {
 .icon-credit a:hover {
   opacity: 1;
 }
+
 
 
 
