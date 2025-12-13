@@ -105,6 +105,12 @@ body.grid-none {
   display: inline-block;
   position: relative;
 }
+/* Expanded hover zone so hovering the logo triggers typing */
+.logo-hover-area {
+  display: inline-block;
+  position: relative;
+  padding-top: 40px;   /* increases hover area above the logo */
+}
 
 /* "welcome to my world!" – Lemon Tuesday */
 .hero-welcome {
@@ -443,6 +449,7 @@ body.grid-none {
 .icon-credit a:hover {
   opacity: 1;
 }
+
 
 
 
