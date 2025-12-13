@@ -73,7 +73,7 @@ body.grid-none {
   position: relative;
   display: inline-block;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 18px;
+  font-size: 14px;
   color: #305bab;
   white-space: nowrap;
   cursor: pointer;
@@ -438,3 +438,4 @@ body.grid-none {
 .icon-credit a:hover {
   opacity: 1;
 }
+
