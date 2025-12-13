@@ -296,9 +296,9 @@ body.grid-none {
   position: absolute;
   width: 12px;
   height: 12px;
-  background: #7bbaff;
-  top: calc(var(--cursor-y) - 3px);
-  left: calc(var(--cursor-x) - 3px);
+  background: #305bab;
+  top: calc(var(--cursor-y) - 6px);
+  left: calc(var(--cursor-x) - 6px);
   border-radius: 2px;
 }
 
@@ -468,3 +468,4 @@ body.grid-none {
 .icon-credit a:hover {
   opacity: 1;
 }
+
