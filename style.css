@@ -65,8 +65,8 @@ body.grid-none {
 
 .hero-tagline {
   position: absolute;
-  top: 30px;                   /* distance from top of hero */
-  left: 50%;                   /* move horizontally across the logo */
+  top: 60px;                   /* distance from top of hero */
+  left: 51%;                   /* move horizontally across the logo */
   transform: translateX(-50%); /* keep text anchored nicely */
 }
 
@@ -460,4 +460,5 @@ body.grid-none {
   transform: scale(1.15);
   opacity: 1;
 }
+
 
