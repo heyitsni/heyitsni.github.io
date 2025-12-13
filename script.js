@@ -180,18 +180,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ======================
-     "hey, its" – HOVER TYPEWRITER (CLEAN)
+     ✅ "hey, its" – HOVER TYPEWRITER on LOGO AREA
   ====================== */
   const heyEl = document.getElementById("heyItsNi");
+  const logoHoverArea = document.getElementById("logoHoverArea");
 
-  if (heyEl) {
+  if (heyEl && logoHoverArea) {
     const fullText = heyEl.dataset.text || heyEl.textContent.trim();
     heyEl.textContent = fullText;
 
     let typingInterval = null;
 
     function startTyping() {
-      // restart clean every time
       if (typingInterval) clearInterval(typingInterval);
 
       heyEl.classList.add("typing");
@@ -211,14 +211,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 80);
     }
 
-    heyEl.addEventListener("mouseenter", startTyping);
-
-    // optional: if you want it to stop when leaving (instead of finishing)
-    // heyEl.addEventListener("mouseleave", () => {
-    //   if (typingInterval) clearInterval(typingInterval);
-    //   typingInterval = null;
-    //   heyEl.classList.remove("typing");
-    //   heyEl.textContent = fullText;
-    // });
+    logoHoverArea.addEventListener("mouseenter", startTyping);
   }
 });
