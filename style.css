@@ -87,8 +87,8 @@ body.grid-none {
 /* Move "hey, its" by editing these */
 .hero-tagline {
   position: absolute;
-  top: 22px;
-  left: 52%;
+  top: 40px;
+  left: 53%;
   transform: translateX(-50%);
 }
 
@@ -462,3 +462,4 @@ body.grid-none {
 .icon-credit a:hover {
   opacity: 1;
 }
+
