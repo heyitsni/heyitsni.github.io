@@ -8,32 +8,28 @@
 </head>
 <body>
 
-  <!-- ===== MAIN CANVAS WRAPPER ===== -->
-  <div class="page-frame">
+  <!-- ===== MAIN CANVAS WRAPPER (kept for structure) ===== -->
+  <div class="page-frame"></div>
 
-    <!-- ========== HERO / LOGO AREA ========== -->
-    <header class="hero">
+  <!-- ========== HERO / LOGO AREA (FIXED / DOES NOT SCROLL) ========== -->
+  <header class="hero hero-fixed">
 
-      <!-- ✅ Hover zone for BOTH: "hey, its" + logo -->
-      <div class="logo-hover-area" id="logoHoverArea">
+    <!-- ✅ Hover zone for BOTH: "hey, its" + logo -->
+    <div class="logo-hover-area" id="logoHoverArea">
 
-        <!-- "hey, its" – hover typewriter ABOVE logo -->
-        <div class="hero-tagline">
-          <span id="heyItsNi" class="typewriter" data-text="hey, its">hey, its</span>
-        </div>
-
-        <!-- Logo PNG -->
-        <img src="logo.png" alt="logo" class="hero-logo" />
-
+      <!-- "hey, its" – typewriter text -->
+      <div class="hero-tagline">
+        <span id="heyItsNi" class="typewriter" data-text="hey, its">hey, its</span>
       </div>
 
-      <!-- "welcome to my world!" – Lemon Tuesday font -->
+      <!-- Logo PNG -->
+      <img src="logo.png" alt="logo" class="hero-logo" />
+
+      <!-- "welcome to my world!" -->
       <div class="hero-welcome">welcome to my world!</div>
 
-    </header>
-
-  </div><!-- /page-frame -->
-
+    </div>
+  </header>
 
   <!-- ===== FOOTER TAGLINE + SOCIAL ICONS (FIXED BOTTOM) ===== -->
   <footer class="footer-area">
@@ -62,19 +58,16 @@
     </small>
   </footer>
 
-
-  <!-- ===== PROFILE CIRCLE – TOP LEFT ===== -->
+  <!-- ===== PROFILE CIRCLE – TOP LEFT (FIXED) ===== -->
   <div class="profile-area">
     <div class="profile-circle">
       <img src="NI.jpeg" alt="Profile Image" />
     </div>
 
-    <!-- Speech bubble -->
     <div class="speech-bubble">Hey, its Ni!</div>
     <div class="speech-dot speech-dot-1"></div>
     <div class="speech-dot speech-dot-2"></div>
 
-    <!-- Intro video box: local video + click → Insta -->
     <a href="https://www.instagram.com/reel/C6JluLTyofo/" target="_blank" rel="noopener" class="intro-link">
       <div class="intro-video">
         <video id="introVideo" muted loop playsinline>
@@ -83,7 +76,6 @@
       </div>
     </a>
   </div>
-
 
   <!-- Turntable (top-right, fixed) -->
   <div class="turntable" id="turntable">
@@ -95,18 +87,13 @@
     <div class="tt-arm"></div>
   </div>
 
-  <!-- Track title display -->
   <div class="track-title" id="trackTitle"></div>
-
-  <!-- Grid toggle button -->
   <button id="gridToggle" class="grid-btn">Grid: Square</button>
 
-  <!-- Custom AutoCAD-style cursor -->
   <div class="custom-cursor">
     <div class="cursor-center"></div>
   </div>
 
-  <!-- Playlist audio -->
   <audio id="bg-music" preload="auto"></audio>
   <audio id="crackle" src="crackle.mp3" preload="auto" loop></audio>
   <audio id="introMusic" src="intro-music.mp3" preload="auto" loop></audio>
