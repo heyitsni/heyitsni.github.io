@@ -18,7 +18,7 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
   transition: background 0.3s ease;
 
-  /* space so fixed footer doesn't overlap content */
+  /* space so fixed footer doesn't overlap anything */
   padding-bottom: 160px;
   min-height: 100vh;
 }
@@ -44,26 +44,50 @@ body.grid-none {
   font-display: swap;
 }
 
-/* Container to keep hero centered horizontally */
+/* Container kept (empty now, but harmless) */
 .page-frame {
   max-width: 1400px;
   margin: 0 auto;
   position: relative;
 }
 
-/* ===== HERO / LOGO AREA ===== */
+/* =========================================
+   HERO / LOGO AREA (FIXED – DOES NOT SCROLL)
+========================================= */
+
+/* Edit these two to move the whole logo area */
+:root {
+  --hero-top: 28px;     /* move up/down */
+  --hero-left: 50%;     /* keep centered */
+}
+
 .hero {
   width: 100%;
   text-align: center;
-  padding-top: 50px;
-  padding-bottom: 8px;
-  position: relative;
 }
 
-/* Move "hey, its" by editing top/left here */
+.hero-fixed {
+  position: fixed;
+  top: var(--hero-top);
+  left: var(--hero-left);
+  transform: translateX(-50%);
+  z-index: 250;
+  pointer-events: auto;
+}
+
+/* Hover zone (logo + text trigger) */
+.logo-hover-area {
+  display: inline-block;
+  position: relative;
+
+  /* makes it easier to hover above the logo */
+  padding-top: 45px;
+}
+
+/* Move "hey, its" by editing these */
 .hero-tagline {
   position: absolute;
-  top: 40px;
+  top: 22px;
   left: 52%;
   transform: translateX(-50%);
 }
@@ -100,21 +124,10 @@ body.grid-none {
   height: 80px;
   margin-bottom: 3px;
 }
-/* ✅ Hover zone: lets hover over logo OR "hey, its" to trigger typing */
-.logo-hover-area {
-  display: inline-block;
-  position: relative;
-}
-/* Expanded hover zone so hovering the logo triggers typing */
-.logo-hover-area {
-  display: inline-block;
-  position: relative;
-  padding-top: 50px;   /* increases hover area above the logo */
-}
 
 /* "welcome to my world!" – Lemon Tuesday */
 .hero-welcome {
-  margin-top: 85px;
+  margin-top: 12px;
   font-family: "Lemon Tuesday", "Brush Script MT", cursive;
   font-size: 20px;
   line-height: 1.1;
@@ -449,11 +462,3 @@ body.grid-none {
 .icon-credit a:hover {
   opacity: 1;
 }
-
-
-
-
-
-
-
-
