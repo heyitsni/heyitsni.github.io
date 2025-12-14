@@ -63,8 +63,8 @@ body.grid-none {
 /* Move "hey, its" by editing top/left here */
 .hero-tagline {
   position: absolute;
-  top: 60px;
-  left: 51.5%;
+  top: 40px;
+  left: 52%;
   transform: translateX(-50%);
 }
 
@@ -98,7 +98,7 @@ body.grid-none {
 
 .hero-logo {
   height: 80px;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 /* ✅ Hover zone: lets hover over logo OR "hey, its" to trigger typing */
 .logo-hover-area {
@@ -109,7 +109,7 @@ body.grid-none {
 .logo-hover-area {
   display: inline-block;
   position: relative;
-  padding-top: 40px;   /* increases hover area above the logo */
+  padding-top: 50px;   /* increases hover area above the logo */
 }
 
 /* "welcome to my world!" – Lemon Tuesday */
@@ -449,6 +449,7 @@ body.grid-none {
 .icon-credit a:hover {
   opacity: 1;
 }
+
 
 
 
