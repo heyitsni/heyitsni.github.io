@@ -18,7 +18,6 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
   transition: background 0.3s ease;
 
-  /* space so fixed footer doesn't overlap anything */
   padding-bottom: 160px;
   min-height: 100vh;
 }
@@ -55,10 +54,9 @@ body.grid-none {
    HERO / LOGO AREA (FIXED – DOES NOT SCROLL)
 ========================================= */
 
-/* Edit these two to move the whole hero area */
 :root {
-  --hero-top: 28px;   /* move up/down */
-  --hero-left: 50%;   /* keep centered */
+  --hero-top: 28px;
+  --hero-left: 50%;
 }
 
 .hero {
@@ -75,14 +73,12 @@ body.grid-none {
   pointer-events: auto;
 }
 
-/* Hover zone (logo + text trigger) */
 .logo-hover-area {
   display: inline-block;
   position: relative;
-  padding-top: 45px; /* easier hover above logo */
+  padding-top: 45px;
 }
 
-/* Move "hey, its" by editing these */
 .hero-tagline {
   position: absolute;
   top: 50px;
@@ -90,7 +86,6 @@ body.grid-none {
   transform: translateX(-50%);
 }
 
-/* "hey, its" – Georgia */
 .typewriter {
   position: relative;
   display: inline-block;
@@ -100,7 +95,6 @@ body.grid-none {
   white-space: nowrap;
 }
 
-/* cursor only while typing */
 .typewriter.typing::after {
   content: "";
   position: absolute;
@@ -122,7 +116,6 @@ body.grid-none {
   margin-bottom: 3px;
 }
 
-/* "welcome to my world!" – Lemon Tuesday */
 .hero-welcome {
   margin-top: 12px;
   font-family: "Lemon Tuesday", "Brush Script MT", cursive;
@@ -139,6 +132,9 @@ body.grid-none {
   left: 50px;
   display: inline-block;
   z-index: 100;
+
+  /* ✅ proper 3D home */
+  perspective: 800px;
 }
 
 .profile-circle {
@@ -149,8 +145,6 @@ body.grid-none {
   display: flex;
   justify-content: center;
   align-items: center;
-  perspective: 800px;
-  transition: transform 0.2s ease-out;
   position: relative;
 }
 
@@ -159,7 +153,11 @@ body.grid-none {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.1s ease-out;
+
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform: rotateX(0deg) rotateY(0deg) translateZ(0) scale(1);
+  transition: transform 0.06s ease-out;
   will-change: transform;
 }
 
@@ -217,10 +215,13 @@ body.grid-none {
   display: flex;
   align-items: center;
   justify-content: center;
+
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);
   transition: opacity 0.25s ease, transform 0.25s ease;
+
+  /* ✅ CLICKABLE again */
   pointer-events: auto;
 }
 
@@ -234,7 +235,6 @@ body.grid-none {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
-  pointer-events: auto;
 }
 
 /* ============= GRID TOGGLE BUTTON ============= */
@@ -377,7 +377,6 @@ body.grid-none {
 @keyframes tt-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 @keyframes tt-arm-swing { 0%, 100% { transform: rotate(20deg); } 50% { transform: rotate(12deg); } }
 
-/* Track title – Georgia */
 .track-title {
   position: fixed;
   top: 210px;
@@ -392,10 +391,10 @@ body.grid-none {
   pointer-events: none;
 }
 
-/* ✅ NEW: Turntable controls */
+/* Turntable controls */
 .tt-controls {
   position: fixed;
-  top: 238px;   /* under track title */
+  top: 238px;
   right: 40px;
   display: flex;
   gap: 10px;
@@ -461,7 +460,6 @@ body.grid-none {
   opacity: 1;
 }
 
-/* ===== ICON CREDIT ===== */
 .icon-credit {
   display: block;
   font-size: 11px;
@@ -481,4 +479,3 @@ body.grid-none {
 .icon-credit a:hover {
   opacity: 1;
 }
-
