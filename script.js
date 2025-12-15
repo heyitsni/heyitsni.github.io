@@ -28,37 +28,54 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ======================
-     PROFILE IMAGE PARALLAX
+     PROFILE IMAGE PARALLAX (FIXED)
+     - listens on profile-area so it doesn't break when video is clickable
+     - only tilts if cursor is over the circle
   ====================== */
+  const profileArea = document.querySelector(".profile-area");
   const circle = document.querySelector(".profile-circle");
   const img = circle ? circle.querySelector("img") : null;
 
-  if (circle && img) {
-    circle.addEventListener("mousemove", (e) => {
+  if (profileArea && circle && img) {
+    const maxRotate = 14;
+    const scale = 1.06;
+
+    function reset() {
+      img.style.transition = "transform 0.25s ease";
+      img.style.transform = "rotateX(0deg) rotateY(0deg) translateZ(0) scale(1)";
+    }
+
+    function isInsideCircle(clientX, clientY) {
       const rect = circle.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+      return (
+        clientX >= rect.left &&
+        clientX <= rect.right &&
+        clientY >= rect.top &&
+        clientY <= rect.bottom
+      );
+    }
 
-      const rotateY = (x / rect.width - 0.5) * 30;
-      const rotateX = (y / rect.height - 0.5) * -30;
-      const depth = 12;
+    function onMove(e) {
+      if (!isInsideCircle(e.clientX, e.clientY)) {
+        reset();
+        return;
+      }
 
-      img.style.transform = `
-        rotateX(${rotateX}deg)
-        rotateY(${rotateY}deg)
-        translateZ(${depth}px)
-        scale(1.08)
-      `;
-    });
+      const rect = circle.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;  // 0..1
+      const y = (e.clientY - rect.top) / rect.height;  // 0..1
 
-    circle.addEventListener("mouseleave", () => {
-      img.style.transform = `
-        rotateX(0deg)
-        rotateY(0deg)
-        translateZ(0)
-        scale(1)
-      `;
-    });
+      const rotY = (x - 0.5) * (maxRotate * 2);
+      const rotX = (0.5 - y) * (maxRotate * 2);
+
+      img.style.transition = "transform 0.06s ease-out";
+      img.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(0) scale(${scale})`;
+    }
+
+    profileArea.addEventListener("mousemove", onMove);
+    profileArea.addEventListener("mouseleave", reset);
+
+    reset();
   }
 
   /* ======================
@@ -73,7 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ======================
      INTRO VIDEO HOVER PLAY
   ====================== */
-  const profileArea = document.querySelector(".profile-area");
   const introVideo = document.getElementById("introVideo");
   const introMusic = document.getElementById("introMusic");
 
@@ -106,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (crackle) crackle.volume = 0.2;
 
   /* ======================
-     JAZZ PLAYLIST for TURNTABLE
+     PLAYLIST
   ====================== */
   const playlist = [
     { title: "A Jazz Piano", url: "a-jazz-piano-110481.mp3" },
@@ -128,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function loadTrack(index) {
     if (!bgMusic || playlist.length === 0) return;
 
-    currentTrackIndex = index % playlist.length;
+    currentTrackIndex = (index + playlist.length) % playlist.length;
     const track = playlist[currentTrackIndex];
 
     bgMusic.src = track.url;
@@ -139,20 +155,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function nextTrack(autoPlay = true) {
     if (!bgMusic) return;
-    loadTrack((currentTrackIndex + 1) % playlist.length);
-
-    if (autoPlay) {
-      bgMusic.play().catch((err) => console.log("Autoplay blocked on next track:", err));
-    }
+    loadTrack(currentTrackIndex + 1);
+    if (autoPlay) bgMusic.play().catch((err) => console.log("Autoplay blocked:", err));
   }
 
   function prevTrack(autoPlay = true) {
     if (!bgMusic) return;
-    loadTrack((currentTrackIndex - 1 + playlist.length) % playlist.length);
-
-    if (autoPlay) {
-      bgMusic.play().catch((err) => console.log("Autoplay blocked on prev track:", err));
-    }
+    loadTrack(currentTrackIndex - 1);
+    if (autoPlay) bgMusic.play().catch((err) => console.log("Autoplay blocked:", err));
   }
 
   if (bgMusic) {
@@ -197,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ======================
-     ✅ Prev / Next BUTTONS
+     Prev / Next BUTTONS
   ====================== */
   const prevBtn = document.getElementById("prevTrackBtn");
   const nextBtn = document.getElementById("nextTrackBtn");
@@ -217,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ======================
-     ✅ "hey, its" – TYPEWRITER on LOGO AREA HOVER
+     "hey, its" – TYPEWRITER on LOGO AREA HOVER
   ====================== */
   const heyEl = document.getElementById("heyItsNi");
   const logoHoverArea = document.getElementById("logoHoverArea");
