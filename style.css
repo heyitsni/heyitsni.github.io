@@ -55,10 +55,10 @@ body.grid-none {
    HERO / LOGO AREA (FIXED – DOES NOT SCROLL)
 ========================================= */
 
-/* Edit these two to move the whole logo area */
+/* Edit these two to move the whole hero area */
 :root {
-  --hero-top: 28px;     /* move up/down */
-  --hero-left: 50%;     /* keep centered */
+  --hero-top: 28px;   /* move up/down */
+  --hero-left: 50%;   /* keep centered */
 }
 
 .hero {
@@ -79,9 +79,7 @@ body.grid-none {
 .logo-hover-area {
   display: inline-block;
   position: relative;
-
-  /* makes it easier to hover above the logo */
-  padding-top: 45px;
+  padding-top: 45px; /* easier hover above logo */
 }
 
 /* Move "hey, its" by editing these */
@@ -100,7 +98,6 @@ body.grid-none {
   font-size: 14px;
   color: #305bab;
   white-space: nowrap;
-  cursor: pointer;
 }
 
 /* cursor only while typing */
@@ -195,19 +192,8 @@ body.grid-none {
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-.speech-dot-1 {
-  width: 9px;
-  height: 9px;
-  left: 210px;
-  top: 24px;
-}
-
-.speech-dot-2 {
-  width: 6px;
-  height: 6px;
-  left: 198px;
-  top: 38px;
-}
+.speech-dot-1 { width: 9px; height: 9px; left: 210px; top: 24px; }
+.speech-dot-2 { width: 6px; height: 6px; left: 198px; top: 38px; }
 
 .profile-area:hover .speech-bubble,
 .profile-area:hover .speech-dot {
@@ -406,6 +392,39 @@ body.grid-none {
   pointer-events: none;
 }
 
+/* ✅ NEW: Turntable controls */
+.tt-controls {
+  position: fixed;
+  top: 238px;   /* under track title */
+  right: 40px;
+  display: flex;
+  gap: 10px;
+  z-index: 6001;
+}
+
+.tt-btn {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  line-height: 1;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(48, 91, 171, 0.35);
+  background: rgba(255, 255, 255, 0.75);
+  color: #305bab;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease;
+}
+
+.tt-btn:hover {
+  transform: scale(1.08);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.tt-btn:active {
+  transform: scale(0.98);
+}
+
 /* ===== FOOTER (FIXED BOTTOM CENTER) ===== */
 .footer-area {
   position: fixed;
@@ -462,5 +481,3 @@ body.grid-none {
 .icon-credit a:hover {
   opacity: 1;
 }
-
-
