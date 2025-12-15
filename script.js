@@ -139,7 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function nextTrack(autoPlay = true) {
     if (!bgMusic) return;
-
     loadTrack((currentTrackIndex + 1) % playlist.length);
 
     if (autoPlay) {
@@ -147,10 +146,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function prevTrack(autoPlay = true) {
+    if (!bgMusic) return;
+    loadTrack((currentTrackIndex - 1 + playlist.length) % playlist.length);
+
+    if (autoPlay) {
+      bgMusic.play().catch((err) => console.log("Autoplay blocked on prev track:", err));
+    }
+  }
+
   if (bgMusic) {
     loadTrack(0);
     bgMusic.addEventListener("ended", () => nextTrack(true));
     bgMusic.addEventListener("error", () => console.log("AUDIO ERROR:", bgMusic.error));
+  }
+
+  function ensurePlayingUI() {
+    isMusicPlaying = true;
+    if (turntable) turntable.classList.add("playing");
+
+    if (crackle) {
+      crackle.currentTime = 0;
+      crackle.play().catch((err) => console.log("Crackle play failed:", err));
+    }
   }
 
   /* ======================
@@ -164,7 +182,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (isMusicPlaying) {
         turntable.classList.add("playing");
-
         bgMusic.play().catch((err) => console.log("Audio play failed:", err));
 
         if (crackle) {
@@ -176,6 +193,26 @@ document.addEventListener("DOMContentLoaded", () => {
         bgMusic.pause();
         if (crackle) crackle.pause();
       }
+    });
+  }
+
+  /* ======================
+     ✅ Prev / Next BUTTONS
+  ====================== */
+  const prevBtn = document.getElementById("prevTrackBtn");
+  const nextBtn = document.getElementById("nextTrackBtn");
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      ensurePlayingUI();
+      prevTrack(true);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      ensurePlayingUI();
+      nextTrack(true);
     });
   }
 
@@ -193,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let hasTypedThisHover = false;
 
     function startTyping() {
-      if (hasTypedThisHover) return; // don't restart while still hovering
+      if (hasTypedThisHover) return;
       hasTypedThisHover = true;
 
       if (typingInterval) clearInterval(typingInterval);
@@ -217,7 +254,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function resetHoverState() {
       hasTypedThisHover = false;
-      // optional: stop mid-way if you leave early
       if (typingInterval) clearInterval(typingInterval);
       typingInterval = null;
       heyEl.classList.remove("typing");
