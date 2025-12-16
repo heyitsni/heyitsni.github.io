@@ -28,9 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ======================
-     PROFILE IMAGE PARALLAX (FIXED)
-     - listens on profile-area so it doesn't break when video is clickable
-     - only tilts if cursor is over the circle
+     PROFILE IMAGE PARALLAX (FIXED + SMOOTH)
+     - listens on profile-area so clickable video doesn't break it
+     - true circular hit-test (no square glitches)
+     - requestAnimationFrame for smoothness
   ====================== */
   const profileArea = document.querySelector(".profile-area");
   const circle = document.querySelector(".profile-circle");
@@ -40,40 +41,63 @@ document.addEventListener("DOMContentLoaded", () => {
     const maxRotate = 14;
     const scale = 1.06;
 
+    let rafId = null;
+    let lastEvent = null;
+
     function reset() {
       img.style.transition = "transform 0.25s ease";
       img.style.transform = "rotateX(0deg) rotateY(0deg) translateZ(0) scale(1)";
     }
 
-    function isInsideCircle(clientX, clientY) {
+    function insideCircle(clientX, clientY) {
       const rect = circle.getBoundingClientRect();
-      return (
-        clientX >= rect.left &&
-        clientX <= rect.right &&
-        clientY >= rect.top &&
-        clientY <= rect.bottom
-      );
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const r = Math.min(rect.width, rect.height) / 2;
+
+      const dx = clientX - cx;
+      const dy = clientY - cy;
+
+      return (dx * dx + dy * dy) <= (r * r);
     }
 
-    function onMove(e) {
-      if (!isInsideCircle(e.clientX, e.clientY)) {
-        reset();
-        return;
-      }
-
+    function applyTilt(e) {
       const rect = circle.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width;  // 0..1
-      const y = (e.clientY - rect.top) / rect.height;  // 0..1
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
 
-      const rotY = (x - 0.5) * (maxRotate * 2);
-      const rotX = (0.5 - y) * (maxRotate * 2);
+      const x = (e.clientX - cx) / (rect.width / 2);   // -1..1
+      const y = (e.clientY - cy) / (rect.height / 2);  // -1..1
+
+      const rotY = x * maxRotate;
+      const rotX = -y * maxRotate;
 
       img.style.transition = "transform 0.06s ease-out";
       img.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(0) scale(${scale})`;
     }
 
+    function onMove(e) {
+      lastEvent = e;
+      if (rafId) return;
+
+      rafId = requestAnimationFrame(() => {
+        rafId = null;
+        if (!lastEvent) return;
+
+        if (!insideCircle(lastEvent.clientX, lastEvent.clientY)) {
+          reset();
+          return;
+        }
+
+        applyTilt(lastEvent);
+      });
+    }
+
     profileArea.addEventListener("mousemove", onMove);
-    profileArea.addEventListener("mouseleave", reset);
+    profileArea.addEventListener("mouseleave", () => {
+      lastEvent = null;
+      reset();
+    });
 
     reset();
   }
