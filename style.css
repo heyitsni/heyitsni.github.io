@@ -53,7 +53,6 @@ body.grid-none {
 /* =========================================
    HERO / LOGO AREA (FIXED – DOES NOT SCROLL)
 ========================================= */
-
 :root {
   --hero-top: 28px;
   --hero-left: 50%;
@@ -132,9 +131,6 @@ body.grid-none {
   left: 50px;
   display: inline-block;
   z-index: 100;
-
-  /* ✅ proper 3D home */
-  perspective: 800px;
 }
 
 .profile-circle {
@@ -146,6 +142,10 @@ body.grid-none {
   justify-content: center;
   align-items: center;
   position: relative;
+
+  /* ✅ more reliable 3D */
+  perspective: 800px;
+  transform-style: preserve-3d;
 }
 
 .profile-circle img {
@@ -156,8 +156,6 @@ body.grid-none {
 
   transform-style: preserve-3d;
   backface-visibility: hidden;
-  transform: rotateX(0deg) rotateY(0deg) translateZ(0) scale(1);
-  transition: transform 0.06s ease-out;
   will-change: transform;
 }
 
@@ -221,7 +219,6 @@ body.grid-none {
   transform: translateY(8px);
   transition: opacity 0.25s ease, transform 0.25s ease;
 
-  /* ✅ CLICKABLE again */
   pointer-events: auto;
 }
 
@@ -479,6 +476,3 @@ body.grid-none {
 .icon-credit a:hover {
   opacity: 1;
 }
-
-
-
